@@ -20,6 +20,8 @@
 		81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58062283FF5C3000BC152 /* UIViewController.swift */; };
 		81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58064283FF8A7000BC152 /* CabRepository.swift */; };
 		81E5806828400647000BC152 /* CabPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5806728400647000BC152 /* CabPin.swift */; };
+		81E5806A28400EB3000BC152 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5806928400EB3000BC152 /* String.swift */; };
+		81E5806E28400F2D000BC152 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81E5807028400F2D000BC152 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		81E58062283FF5C3000BC152 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		81E58064283FF8A7000BC152 /* CabRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabRepository.swift; sourceTree = "<group>"; };
 		81E5806728400647000BC152 /* CabPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPin.swift; sourceTree = "<group>"; };
+		81E5806928400EB3000BC152 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		81E5806F28400F2D000BC152 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		81E58050283FE564000BC152 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				81E5806B28400EE4000BC152 /* Localized */,
 				81E58059283FE80B000BC152 /* Extensions */,
 				81E58038283FE4DF000BC152 /* AppDelegate.swift */,
 				81E5803A283FE4DF000BC152 /* SceneDelegate.swift */,
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				81E58062283FF5C3000BC152 /* UIViewController.swift */,
+				81E5806928400EB3000BC152 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +172,14 @@
 				81E58064283FF8A7000BC152 /* CabRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		81E5806B28400EE4000BC152 /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				81E5807028400F2D000BC152 /* Localizable.strings */,
+			);
+			path = Localized;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81E5806E28400F2D000BC152 /* Localizable.strings in Resources */,
 				81E58045283FE4E0000BC152 /* LaunchScreen.storyboard in Resources */,
 				81E58053283FE68E000BC152 /* sample.json in Resources */,
 				81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */,
@@ -242,6 +257,7 @@
 			files = (
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
+				81E5806A28400EB3000BC152 /* String.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,
 				81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */,
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,
@@ -269,6 +285,14 @@
 				81E58044283FE4E0000BC152 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		81E5807028400F2D000BC152 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81E5806F28400F2D000BC152 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

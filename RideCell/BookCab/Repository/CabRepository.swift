@@ -42,10 +42,10 @@ class CabRepository: CabRepositoryProtocol {
                     }
                     completion(.success(cabs))
                 }else {
-                    completion(.failure(.parsing("Opps!!! something went wrong during data processing")))
+                    completion(.failure(.parsing("error_during_parsing".localized)))
                 }
               } catch {
-                  completion(.failure(.parsing("Opps!!! something went wrong during data processing")))
+                  completion(.failure(.parsing("error_during_parsing".localized)))
               }
         }
     }

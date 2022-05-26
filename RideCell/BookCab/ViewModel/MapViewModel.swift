@@ -29,7 +29,7 @@ enum MapState {
         get {
             switch self {
             case .loading:
-                return "Please wait..."
+                return "please_wait".localized
             case .loaded(_):
                 return nil
             case .failed(let error):
