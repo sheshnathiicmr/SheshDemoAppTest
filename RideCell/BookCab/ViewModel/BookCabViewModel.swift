@@ -11,21 +11,40 @@ import Foundation
 
 class BookCabViewModel {
     
-    func getCabs()  {
-        
+    func getCabs(completion: @escaping (Result<[Cab], CustomError>) -> Void) {
         if let path = Bundle.main.path(forResource: "sample", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let cabs = jsonResult as? [[String:AnyObject]] {
-                    for cab in cabs {
-                        print("cab: \(cab)")
+                var cabs = [Cab]()
+                if let cabsJSON = jsonResult as? [[String:AnyObject]] {
+                    for cabJSON in cabsJSON {
+                        let id = cabJSON["id"] as! Int
+                        let isActive = cabJSON["is_active"] as! Bool
+                        let isAvailable = cabJSON["is_available"] as! Bool
+                        let lat = cabJSON["lat"] as? Double
+                        let lng = cabJSON["lng"] as? Double
+                        let licensePlateNumber = cabJSON["license_plate_number"] as! String
+                        let pool = cabJSON["pool"] as! String
+                        let remainingMileage = cabJSON["remaining_mileage"] as! Int
+                        let remainingRangeInMeters = cabJSON["remaining_range_in_meters"] as? Int
+                        let transmissionMode = cabJSON["transmission_mode"] as? String
+                        let vehicleMake = cabJSON["vehicle_make"] as! String
+                        let vehiclePic = cabJSON["vehicle_pic"] as! String
+                        let vehiclePicAbsoluteUrl = cabJSON["vehicle_pic_absolute_url"] as! String
+                        let vehicleType = cabJSON["vehicle_type"] as! String
+                        let vehicleTypeId = cabJSON["vehicle_type_id"] as! Int
+                        
+                       let cab = Cab(id: id, isActive: isActive, isAvailable: isAvailable, lat: lat, lng: lng, licensePlateNumber: licensePlateNumber, pool: pool, remainingMileage: remainingMileage, remainingRangeInMeters: remainingRangeInMeters, transmissionMode: transmissionMode, vehicleMake: vehicleMake, vehiclePic: vehiclePic, vehiclePicAbsoluteUrl: vehiclePicAbsoluteUrl, vehicleType: vehicleType, vehicleTypeId: vehicleTypeId)
+                        cabs.append(cab)
                     }
+                    completion(.success(cabs))
+                }else {
+                    completion(.failure(.parsing("Opps!!! something went wrong during data processing")))
                 }
               } catch {
-                   // handle error
+                  completion(.failure(.parsing("Opps!!! something went wrong during data processing")))
               }
         }
-        
     }
 }

@@ -15,7 +15,14 @@ class BookCabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = BookCabViewModel()
-        self.viewModel.getCabs()
+        self.viewModel.getCabs { result in
+            switch result {
+            case let .success(cabs):
+                print("total cabs: \(cabs.count)")
+            case .failure(let error) :
+                print("error: \(error.getErrorMessage())")
+            }
+        }
     }
 
 
