@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BookCabViewController.swift
 //  RideCell
 //
 //  Created by ityx  on 26/05/22.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BookCabViewController: UIViewController {
 
+    ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
