@@ -14,11 +14,11 @@
 		81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E58041283FE4E0000BC152 /* Assets.xcassets */; };
 		81E58045283FE4E0000BC152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E58043283FE4E0000BC152 /* LaunchScreen.storyboard */; };
 		81E58053283FE68E000BC152 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 81E58052283FE68E000BC152 /* sample.json */; };
-		81E58056283FE7D3000BC152 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58055283FE7D3000BC152 /* LoadingView.swift */; };
-		81E58058283FE7E2000BC152 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81E58057283FE7E2000BC152 /* LoadingView.xib */; };
 		81E5805B283FE864000BC152 /* BookCabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805A283FE864000BC152 /* BookCabViewModel.swift */; };
 		81E5805E283FE9BA000BC152 /* Cab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805D283FE9BA000BC152 /* Cab.swift */; };
 		81E58061283FEE82000BC152 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58060283FEE82000BC152 /* CustomError.swift */; };
+		81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58062283FF5C3000BC152 /* UIViewController.swift */; };
+		81E58065283FF8A7000BC152 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58064283FF8A7000BC152 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +31,11 @@
 		81E58044283FE4E0000BC152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E58046283FE4E0000BC152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E58052283FE68E000BC152 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
-		81E58055283FE7D3000BC152 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		81E58057283FE7E2000BC152 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		81E5805A283FE864000BC152 /* BookCabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCabViewModel.swift; sourceTree = "<group>"; };
 		81E5805D283FE9BA000BC152 /* Cab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cab.swift; sourceTree = "<group>"; };
 		81E58060283FEE82000BC152 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		81E58062283FF5C3000BC152 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		81E58064283FF8A7000BC152 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,6 @@
 		81E58037283FE4DF000BC152 /* RideCell */ = {
 			isa = PBXGroup;
 			children = (
-				81E58054283FE797000BC152 /* LoadingView */,
 				81E58050283FE564000BC152 /* Common */,
 				81E5804C283FE539000BC152 /* BookCab */,
 				81E58041283FE4E0000BC152 /* Assets.xcassets */,
@@ -81,8 +80,9 @@
 		81E5804C283FE539000BC152 /* BookCab */ = {
 			isa = PBXGroup;
 			children = (
-				81E5805F283FEE30000BC152 /* HelperClasses */,
+				81E58066283FF8ED000BC152 /* Repository */,
 				81E58051283FE663000BC152 /* Resources */,
+				81E5805F283FEE30000BC152 /* HelperClasses */,
 				81E5805C283FE8B0000BC152 /* Model */,
 				81E5804F283FE55C000BC152 /* Controller */,
 				81E5804E283FE553000BC152 /* ViewModel */,
@@ -133,18 +133,10 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		81E58054283FE797000BC152 /* LoadingView */ = {
-			isa = PBXGroup;
-			children = (
-				81E58055283FE7D3000BC152 /* LoadingView.swift */,
-				81E58057283FE7E2000BC152 /* LoadingView.xib */,
-			);
-			path = LoadingView;
-			sourceTree = "<group>";
-		};
 		81E58059283FE80B000BC152 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				81E58062283FF5C3000BC152 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,6 +155,14 @@
 				81E58060283FEE82000BC152 /* CustomError.swift */,
 			);
 			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		81E58066283FF8ED000BC152 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				81E58064283FF8A7000BC152 /* Repository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +227,6 @@
 				81E58053283FE68E000BC152 /* sample.json in Resources */,
 				81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */,
 				81E58040283FE4DF000BC152 /* Main.storyboard in Resources */,
-				81E58058283FE7E2000BC152 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,11 +239,12 @@
 			files = (
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* BookCabViewController.swift in Sources */,
-				81E58056283FE7D3000BC152 /* LoadingView.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,
 				81E5805B283FE864000BC152 /* BookCabViewModel.swift in Sources */,
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,
+				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
+				81E58065283FF8A7000BC152 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

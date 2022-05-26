@@ -19,16 +19,41 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-Tc-Zxz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-IO-rUn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL7-XI-udb">
+                                        <rect key="frame" x="186" y="420.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="bL7-XI-udb" firstAttribute="centerX" secondItem="AGh-IO-rUn" secondAttribute="centerX" id="JK2-cG-w36"/>
+                                    <constraint firstItem="bL7-XI-udb" firstAttribute="centerY" secondItem="AGh-IO-rUn" secondAttribute="centerY" id="h4G-Aq-gkg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="AGh-IO-rUn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSQ-ff-brS"/>
+                            <constraint firstItem="AGh-IO-rUn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBf-mR-gTw"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YMp-xa-vXj"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YZJ-8d-W4E"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZw-wW-2qZ"/>
+                            <constraint firstItem="AGh-IO-rUn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fV3-e2-VBh"/>
+                            <constraint firstItem="AGh-IO-rUn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lxT-qH-DoP"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ycq-BU-56i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Nus-Tc-Zxz" id="ZK6-i0-44c"/>
+                        <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
+                        <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,7 +26,7 @@ class Cab {
     var vehicleType:String
     var vehicleTypeId:Int
     
-    ///MARK:- Initializer
+    ///MARK:- Initialiser
     internal init(id: Int, isActive: Bool, isAvailable: Bool, lat: Double?, lng: Double?, licensePlateNumber: String, pool: String, remainingMileage: Int, remainingRangeInMeters: Int?, transmissionMode: String?, vehicleMake: String, vehiclePic: String, vehiclePicAbsoluteUrl: String, vehicleType: String, vehicleTypeId: Int) {
         self.id = id
         self.isActive = isActive

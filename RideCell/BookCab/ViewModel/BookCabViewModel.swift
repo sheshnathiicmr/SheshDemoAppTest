@@ -7,44 +7,70 @@
 
 import Foundation
 
+enum MapState {
+    case loading
+    case loaded([Cab])
+    case failed(CustomError)
+    
+    var shouldHideOverlayView:Bool {
+        get {
+            switch self {
+            case .loading:
+                return false
+            case .loaded(_):
+                return true
+            case .failed(_):
+                return false
+            }
+        }
+    }
+    
+    var overlayViewMessage:String? {
+        get {
+            switch self {
+            case .loading:
+                return "Please wait..."
+            case .loaded(_):
+                return nil
+            case .failed(let error):
+                return error.getErrorMessage()
+            }
+        }
+    }
+    
+}
+
+protocol BookCabViewModelDelegate {
+    func stateChanged(newState:MapState)
+}
 
 
 class BookCabViewModel {
+
+    ///MARK:- Proporties
+    private var delegate:BookCabViewModelDelegate!
+    private var repository:RepositoryProtocol!
     
-    func getCabs(completion: @escaping (Result<[Cab], CustomError>) -> Void) {
-        if let path = Bundle.main.path(forResource: "sample", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                var cabs = [Cab]()
-                if let cabsJSON = jsonResult as? [[String:AnyObject]] {
-                    for cabJSON in cabsJSON {
-                        let id = cabJSON["id"] as! Int
-                        let isActive = cabJSON["is_active"] as! Bool
-                        let isAvailable = cabJSON["is_available"] as! Bool
-                        let lat = cabJSON["lat"] as? Double
-                        let lng = cabJSON["lng"] as? Double
-                        let licensePlateNumber = cabJSON["license_plate_number"] as! String
-                        let pool = cabJSON["pool"] as! String
-                        let remainingMileage = cabJSON["remaining_mileage"] as! Int
-                        let remainingRangeInMeters = cabJSON["remaining_range_in_meters"] as? Int
-                        let transmissionMode = cabJSON["transmission_mode"] as? String
-                        let vehicleMake = cabJSON["vehicle_make"] as! String
-                        let vehiclePic = cabJSON["vehicle_pic"] as! String
-                        let vehiclePicAbsoluteUrl = cabJSON["vehicle_pic_absolute_url"] as! String
-                        let vehicleType = cabJSON["vehicle_type"] as! String
-                        let vehicleTypeId = cabJSON["vehicle_type_id"] as! Int
-                        
-                       let cab = Cab(id: id, isActive: isActive, isAvailable: isAvailable, lat: lat, lng: lng, licensePlateNumber: licensePlateNumber, pool: pool, remainingMileage: remainingMileage, remainingRangeInMeters: remainingRangeInMeters, transmissionMode: transmissionMode, vehicleMake: vehicleMake, vehiclePic: vehiclePic, vehiclePicAbsoluteUrl: vehiclePicAbsoluteUrl, vehicleType: vehicleType, vehicleTypeId: vehicleTypeId)
-                        cabs.append(cab)
-                    }
-                    completion(.success(cabs))
-                }else {
-                    completion(.failure(.parsing("Opps!!! something went wrong during data processing")))
-                }
-              } catch {
-                  completion(.failure(.parsing("Opps!!! something went wrong during data processing")))
-              }
+    private var state:MapState = .loading {
+        didSet{
+            self.delegate.stateChanged(newState: self.state)
         }
     }
+
+    ///MARK:- Initialiser
+    init(repository:RepositoryProtocol, delegate:BookCabViewModelDelegate) {
+        self.delegate = delegate
+        self.delegate.stateChanged(newState: self.state) //set initial state
+        self.repository = repository
+        
+        self.repository.fetchCabs { result in
+            switch result {
+            case let .success(cabs):
+                self.state = .loaded(cabs)
+            case .failure(let error) :
+                self.state = .failed(error)
+            }
+        }
+    }
+    
 }
