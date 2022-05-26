@@ -19,6 +19,7 @@
 		81E58061283FEE82000BC152 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58060283FEE82000BC152 /* CustomError.swift */; };
 		81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58062283FF5C3000BC152 /* UIViewController.swift */; };
 		81E58065283FF8A7000BC152 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58064283FF8A7000BC152 /* Repository.swift */; };
+		81E5806828400647000BC152 /* CabPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5806728400647000BC152 /* CabPin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		81E58060283FEE82000BC152 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		81E58062283FF5C3000BC152 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		81E58064283FF8A7000BC152 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		81E5806728400647000BC152 /* CabPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		81E5804C283FE539000BC152 /* BookCab */ = {
 			isa = PBXGroup;
 			children = (
+				81E5803E283FE4DF000BC152 /* Main.storyboard */,
 				81E58066283FF8ED000BC152 /* Repository */,
 				81E58051283FE663000BC152 /* Resources */,
 				81E5805F283FEE30000BC152 /* HelperClasses */,
@@ -94,7 +97,7 @@
 		81E5804D283FE549000BC152 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				81E5803E283FE4DF000BC152 /* Main.storyboard */,
+				81E5806728400647000BC152 /* CabPin.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,
 				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
+				81E5806828400647000BC152 /* CabPin.swift in Sources */,
 				81E58065283FF8A7000BC152 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
