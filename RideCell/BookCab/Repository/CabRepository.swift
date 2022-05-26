@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol RepositoryProtocol {
+protocol CabRepositoryProtocol {
     func fetchCabs(with completion: @escaping (Result<[Cab], CustomError>) -> Void)
 }
 
-class Repository: RepositoryProtocol {
+class CabRepository: CabRepositoryProtocol {
     
     func fetchCabs(with completion: @escaping (Result<[Cab], CustomError>) -> Void) {
         if let path = Bundle.main.path(forResource: "sample", ofType: "json") {

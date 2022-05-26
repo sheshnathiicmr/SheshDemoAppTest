@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class BookCabViewController: UIViewController {
+class MapViewController: UIViewController {
 
     ///MARK:- Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -16,12 +16,12 @@ class BookCabViewController: UIViewController {
     @IBOutlet weak var overlayMessageLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
     ///MARK:- Propterties
-    var viewModel:BookCabViewModel!
+    var viewModel:MapViewModel!
     
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = BookCabViewModel(repository: Repository(), delegate: self)
+        self.viewModel = MapViewModel(repository: CabRepository(), delegate: self)
         self.mapView.delegate = self
     }
     
@@ -42,7 +42,7 @@ class BookCabViewController: UIViewController {
     }
 }
 
-extension BookCabViewController: BookCabViewModelDelegate {
+extension MapViewController: MapViewModelDelegate {
     
     func stateChanged(newState: MapState) {
         self.overlayView.isHidden = newState.shouldHideOverlayView
@@ -60,7 +60,7 @@ extension BookCabViewController: BookCabViewModelDelegate {
     }
 }
 
-extension BookCabViewController: MKMapViewDelegate {
+extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is MKPointAnnotation) {

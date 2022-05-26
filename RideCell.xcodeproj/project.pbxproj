@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58038283FE4DF000BC152 /* AppDelegate.swift */; };
 		81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803A283FE4DF000BC152 /* SceneDelegate.swift */; };
-		81E5803D283FE4DF000BC152 /* BookCabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803C283FE4DF000BC152 /* BookCabViewController.swift */; };
+		81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803C283FE4DF000BC152 /* MapViewController.swift */; };
 		81E58040283FE4DF000BC152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E5803E283FE4DF000BC152 /* Main.storyboard */; };
 		81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E58041283FE4E0000BC152 /* Assets.xcassets */; };
 		81E58045283FE4E0000BC152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E58043283FE4E0000BC152 /* LaunchScreen.storyboard */; };
 		81E58053283FE68E000BC152 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 81E58052283FE68E000BC152 /* sample.json */; };
-		81E5805B283FE864000BC152 /* BookCabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805A283FE864000BC152 /* BookCabViewModel.swift */; };
+		81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805A283FE864000BC152 /* MapViewModel.swift */; };
 		81E5805E283FE9BA000BC152 /* Cab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805D283FE9BA000BC152 /* Cab.swift */; };
 		81E58061283FEE82000BC152 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58060283FEE82000BC152 /* CustomError.swift */; };
 		81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58062283FF5C3000BC152 /* UIViewController.swift */; };
-		81E58065283FF8A7000BC152 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58064283FF8A7000BC152 /* Repository.swift */; };
+		81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58064283FF8A7000BC152 /* CabRepository.swift */; };
 		81E5806828400647000BC152 /* CabPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5806728400647000BC152 /* CabPin.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,17 +26,17 @@
 		81E58035283FE4DF000BC152 /* RideCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E58038283FE4DF000BC152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81E5803A283FE4DF000BC152 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		81E5803C283FE4DF000BC152 /* BookCabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCabViewController.swift; sourceTree = "<group>"; };
+		81E5803C283FE4DF000BC152 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		81E5803F283FE4DF000BC152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81E58041283FE4E0000BC152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E58044283FE4E0000BC152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E58046283FE4E0000BC152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E58052283FE68E000BC152 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
-		81E5805A283FE864000BC152 /* BookCabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCabViewModel.swift; sourceTree = "<group>"; };
+		81E5805A283FE864000BC152 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		81E5805D283FE9BA000BC152 /* Cab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cab.swift; sourceTree = "<group>"; };
 		81E58060283FEE82000BC152 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		81E58062283FF5C3000BC152 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		81E58064283FF8A7000BC152 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		81E58064283FF8A7000BC152 /* CabRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabRepository.swift; sourceTree = "<group>"; };
 		81E5806728400647000BC152 /* CabPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,7 @@
 		81E5804E283FE553000BC152 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				81E5805A283FE864000BC152 /* BookCabViewModel.swift */,
+				81E5805A283FE864000BC152 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,7 +113,7 @@
 		81E5804F283FE55C000BC152 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				81E5803C283FE4DF000BC152 /* BookCabViewController.swift */,
+				81E5803C283FE4DF000BC152 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 		81E58066283FF8ED000BC152 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				81E58064283FF8A7000BC152 /* Repository.swift */,
+				81E58064283FF8A7000BC152 /* CabRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -241,14 +241,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
-				81E5803D283FE4DF000BC152 /* BookCabViewController.swift in Sources */,
+				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,
-				81E5805B283FE864000BC152 /* BookCabViewModel.swift in Sources */,
+				81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */,
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,
 				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
 				81E5806828400647000BC152 /* CabPin.swift in Sources */,
-				81E58065283FF8A7000BC152 /* Repository.swift in Sources */,
+				81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

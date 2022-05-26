@@ -1,5 +1,5 @@
 //
-//  BookCabViewModel.swift
+//  MapViewModel.swift
 //  RideCell
 //
 //  Created by ityx  on 26/05/22.
@@ -40,16 +40,16 @@ enum MapState {
     
 }
 
-protocol BookCabViewModelDelegate {
+protocol MapViewModelDelegate {
     func stateChanged(newState:MapState)
 }
 
 
-class BookCabViewModel {
+class MapViewModel {
 
     ///MARK:- Proporties
-    private var delegate:BookCabViewModelDelegate!
-    private var repository:RepositoryProtocol!
+    private var delegate:MapViewModelDelegate!
+    private var repository:CabRepositoryProtocol!
     
     private var state:MapState = .loading {
         didSet{
@@ -58,7 +58,7 @@ class BookCabViewModel {
     }
 
     ///MARK:- Initialiser
-    init(repository:RepositoryProtocol, delegate:BookCabViewModelDelegate) {
+    init(repository:CabRepositoryProtocol, delegate:MapViewModelDelegate) {
         self.delegate = delegate
         self.delegate.stateChanged(newState: self.state) //set initial state
         self.repository = repository
