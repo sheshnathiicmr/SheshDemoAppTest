@@ -29,16 +29,22 @@ class MapViewController: UIViewController {
     private func zoomToFirstCabLocation(cab:Cab) {
         guard let lat = cab.lat, let lng = cab.lng else { return }
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         self.mapView.setRegion(region, animated: true)
-        
-        // Drop a pin at user's Current Location
-        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
-        myAnnotation.coordinate = location
-        myAnnotation.title = cab.licensePlateNumber
-        myAnnotation.subtitle = cab.vehicleMake
-        mapView.addAnnotation(myAnnotation)
-        
+    }
+    
+    private func addCabAnnotationOnMap(cabs:[Cab]) {
+        for cab in cabs {
+            // Drop a pin at cab's Current Location
+            guard let lat = cab.lat, let lng = cab.lng else { return }
+            let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+            
+            let myAnnotation: MKPointAnnotation = MKPointAnnotation()
+            myAnnotation.coordinate = location
+            myAnnotation.title = cab.licensePlateNumber
+            myAnnotation.subtitle = cab.vehicleMake
+            mapView.addAnnotation(myAnnotation)
+        }
     }
 }
 
@@ -54,6 +60,7 @@ extension MapViewController: MapViewModelDelegate {
             if let firstCab = cabs.first {
                 self.zoomToFirstCabLocation(cab: firstCab)
             }
+            self.addCabAnnotationOnMap(cabs: cabs)
         case .failed(let customError):
             self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
         }
@@ -69,14 +76,11 @@ extension MapViewController: MKMapViewDelegate {
         let annotationIdentifier = "AnnotationIdentifier"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView!.canShowCallout = true
+            annotationView = CabPin(annotation: annotation, reuseIdentifier: annotationIdentifier)
         }
         else {
             annotationView!.annotation = annotation
         }
-        let pinImage = UIImage(named: "CabPin")
-        annotationView!.image = pinImage
        return annotationView
     }
 }
