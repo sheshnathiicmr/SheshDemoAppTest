@@ -11,7 +11,8 @@ import Foundation
 class MockRepository: CabRepositoryProtocol {
     
     func fetchCabs(with completion: @escaping (Result<[Cab], CustomError>) -> Void) {
-        if let path = Bundle.main.path(forResource: "test_sample", ofType: "json") {
+        let testBundle = Bundle(for: type(of: self))
+        if let path = testBundle.path(forResource: "test_sample", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
