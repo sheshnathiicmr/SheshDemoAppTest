@@ -11,15 +11,15 @@ class CabInfoPageViewController: UIPageViewController {
 
     ///MARK:- Propterties
     private var selectedCab:Cab?
-    var cabInfoPagedelegate:CabSelectionChangeDelegate?
-    
     var cabs:[Cab]!
+    var cabInfoPagedelegate:CabSelectionChangeDelegate?
     
     
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
+        delegate = self
     }
     
     func selectedCabChanged(cab: Cab) {
@@ -49,4 +49,19 @@ extension CabInfoPageViewController: UIPageViewControllerDataSource {
         guard let cab = self.selectedCab else { return nil }
         return controller(for: cab)
     }
+}
+
+extension CabInfoPageViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if (!completed){
+            return
+        }
+//        let pageIndex = self.currentIndex
+        //self.cardsPageViewControllerDelegate?.didChange(currentIndex: pageIndex)
+        if let currentCab = self.selectedCab {
+            self.cabInfoPagedelegate?.selectedCabChanged(cab: currentCab)
+        }
+    }
+    
 }
