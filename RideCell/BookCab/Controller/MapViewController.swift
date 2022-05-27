@@ -111,7 +111,6 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: CabSelectionChangeDelegate {
     
     func selectedCabChanged(cab: Cab) {
-        print("selected cab by page nav: \(cab.vehicleType)")
         self.viewModel.setSelectedCab(cab: cab)
         self.zoomToCabLocation(cab: cab)
         let annotations = mapView.annotations.filter { annotation in
