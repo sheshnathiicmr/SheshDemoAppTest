@@ -26,13 +26,13 @@ class Cab: Equatable {
     var remainingRangeInMeters:Int?
     var transmissionMode:String?
     var vehicleMake:String
-    var vehiclePic:String
+    var seatCount:String
     var vehiclePicAbsoluteUrl:String
     var vehicleType:String
     var vehicleTypeId:Int
     
     ///MARK:- Initialiser
-    internal init(id: Int, isActive: Bool, isAvailable: Bool, lat: Double?, lng: Double?, licensePlateNumber: String, pool: String, remainingMileage: Int, remainingRangeInMeters: Int?, transmissionMode: String?, vehicleMake: String, vehiclePic: String, vehiclePicAbsoluteUrl: String, vehicleType: String, vehicleTypeId: Int) {
+    internal init(id: Int, isActive: Bool, isAvailable: Bool, lat: Double?, lng: Double?, licensePlateNumber: String, pool: String, remainingMileage: Int, remainingRangeInMeters: Int?, transmissionMode: String?, vehicleMake: String, seatCount: String, vehiclePicAbsoluteUrl: String, vehicleType: String, vehicleTypeId: Int) {
         self.id = id
         self.isActive = isActive
         self.isAvailable = isAvailable
@@ -44,7 +44,7 @@ class Cab: Equatable {
         self.remainingRangeInMeters = remainingRangeInMeters
         self.transmissionMode = transmissionMode
         self.vehicleMake = vehicleMake
-        self.vehiclePic = vehiclePic
+        self.seatCount = seatCount
         self.vehiclePicAbsoluteUrl = vehiclePicAbsoluteUrl
         self.vehicleType = vehicleType
         self.vehicleTypeId = vehicleTypeId

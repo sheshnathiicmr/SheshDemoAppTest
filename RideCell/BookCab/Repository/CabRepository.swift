@@ -32,12 +32,12 @@ class CabRepository: CabRepositoryProtocol {
                         let remainingRangeInMeters = cabJSON["remaining_range_in_meters"] as? Int
                         let transmissionMode = cabJSON["transmission_mode"] as? String
                         let vehicleMake = cabJSON["vehicle_make"] as! String
-                        let vehiclePic = cabJSON["vehicle_pic"] as! String
+                        let seatCount = cabJSON["seat_count"] as! String
                         let vehiclePicAbsoluteUrl = cabJSON["vehicle_pic_absolute_url"] as! String
                         let vehicleType = cabJSON["vehicle_type"] as! String
                         let vehicleTypeId = cabJSON["vehicle_type_id"] as! Int
                         
-                       let cab = Cab(id: id, isActive: isActive, isAvailable: isAvailable, lat: lat, lng: lng, licensePlateNumber: licensePlateNumber, pool: pool, remainingMileage: remainingMileage, remainingRangeInMeters: remainingRangeInMeters, transmissionMode: transmissionMode, vehicleMake: vehicleMake, vehiclePic: vehiclePic, vehiclePicAbsoluteUrl: vehiclePicAbsoluteUrl, vehicleType: vehicleType, vehicleTypeId: vehicleTypeId)
+                       let cab = Cab(id: id, isActive: isActive, isAvailable: isAvailable, lat: lat, lng: lng, licensePlateNumber: licensePlateNumber, pool: pool, remainingMileage: remainingMileage, remainingRangeInMeters: remainingRangeInMeters, transmissionMode: transmissionMode, vehicleMake: vehicleMake, seatCount: seatCount, vehiclePicAbsoluteUrl: vehiclePicAbsoluteUrl, vehicleType: vehicleType, vehicleTypeId: vehicleTypeId)
                         cabs.append(cab)
                     }
                     completion(.success(cabs))

@@ -37,6 +37,7 @@ class CabInfoViewController: UIViewController {
     
     private func bindCabInfo() {
         self.licensePlateNumberLabel.text = self.cab.licensePlateNumber
+        self.seatsCountLabel.text = self.cab.seatCount
         self.nonRunningCostLabel.text = self.cab.transmissionMode
         self.cabTypeLabel.text = cab.vehicleType
         self.setBackgroundImage()

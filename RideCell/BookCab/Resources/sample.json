@@ -1,53 +1,54 @@
-	[{
-	"id" : 84,
-    "is_active" : true,
-    "is_available" : true,
-    "lat" : 18.506029,
-    "lng" : 73.825490,
-    "license_plate_number" : "7LVF807",
-    "pool" : "active",
-    "remaining_mileage" : 91,
-    "remaining_range_in_meters" : 146000,
-    "transmission_mode" : "park",
-    "vehicle_make" : "BMW i3 Van",
-    "vehicle_pic" : "/media/uploads/vehicles/display_pics/739c2443-5c6b-405a-9eb1-b70f30debe34.png",
-    "vehicle_pic_absolute_url" : "https://d16vxu8318b851.cloudfront.net/uploads/vehicles/display_pics/739c2443-5c6b-405a-9eb1-b70f30debe34.png",
-    "vehicle_type" : "BMW i3 Van",
-    "vehicle_type_id" : 5
-
-	},
-	{
-	"id" : 1102,
-    "is_active" : true,
-    "is_available" : true,
-    "lat" : 18.508303,
-    "lng" : 73.822692,
-    "license_plate_number" : "7LKJ997",
-    "pool" : "active",
-    "remaining_mileage" : 37,
-    "remaining_range_in_meters" : 59000,
-    "transmission_mode" : "running",
-    "vehicle_make" : "BMW i3 Van",
-    "vehicle_pic" : "/media/uploads/vehicles/display_pics/5b96f5f8-2342-4448-8bfc-745275389988.png",
-    "vehicle_pic_absolute_url" : "https://d16vxu8318b851.cloudfront.net/uploads/vehicles/display_pics/5b96f5f8-2342-4448-8bfc-745275389988.png",
-    "vehicle_type" : "Lamborghini",
-    "vehicle_type_id" : 6
-
-	},
-	{
-	"id" : 4770,
-    "is_active" : true,
-    "is_available" : true,
-    "lat" : 18.509586,
-    "lng" : 73.833215,
-    "license_plate_number" : "plate627",
-    "pool" : "active",
-    "remaining_mileage" : 0,
-    "transmission_mode" : "park",
-    "vehicle_make" : "BMW i3 Van",
-    "vehicle_pic" : "/media/uploads/vehicles/display_pics/739c2443-5c6b-405a-9eb1-b70f30debe34.png",
-    "vehicle_pic_absolute_url" : "https://d16vxu8318b851.cloudfront.net/uploads/vehicles/display_pics/739c2443-5c6b-405a-9eb1-b70f30debe34.png",
-    "vehicle_type" : "Audi",
-    "vehicle_type_id" : 9
-	}
-	]
+[
+    {
+        "id" : 1102,
+        "is_active" : true,
+        "is_available" : true,
+        "lat" : 18.508303,
+        "lng" : 73.822692,
+        "license_plate_number" : "7LKJ997",
+        "pool" : "active",
+        "remaining_mileage" : 37,
+        "remaining_range_in_meters" : 59000,
+        "transmission_mode" : "running",
+        "vehicle_make" : "BMW i3 Van",
+        "seat_count" : "6 Seats",
+        "vehicle_pic_absolute_url" : "https://d16vxu8318b851.cloudfront.net/uploads/vehicles/display_pics/5b96f5f8-2342-4448-8bfc-745275389988.png",
+        "vehicle_type" : "Lamborghini",
+        "vehicle_type_id" : 6
+        
+    },
+    {
+        "id" : 84,
+        "is_active" : true,
+        "is_available" : true,
+        "lat" : 18.506029,
+        "lng" : 73.825490,
+        "license_plate_number" : "7LVF807",
+        "pool" : "active",
+        "remaining_mileage" : 91,
+        "remaining_range_in_meters" : 146000,
+        "transmission_mode" : "park",
+        "vehicle_make" : "BMW i3 Van",
+        "seat_count" : "5 Seats",
+        "vehicle_pic_absolute_url" : "https://d16vxu8318b851.cloudfront.net/uploads/vehicles/display_pics/739c2443-5c6b-405a-9eb1-b70f30debe34.png",
+        "vehicle_type" : "BMW i3 Van",
+        "vehicle_type_id" : 5
+        
+    },
+    {
+        "id" : 4770,
+        "is_active" : true,
+        "is_available" : true,
+        "lat" : 18.509586,
+        "lng" : 73.833215,
+        "license_plate_number" : "plate627",
+        "pool" : "active",
+        "remaining_mileage" : 0,
+        "transmission_mode" : "park",
+        "vehicle_make" : "BMW i3 Van",
+        "seat_count" : "4 Seats",
+        "vehicle_pic_absolute_url" : "https://d16vxu8318b851.cloudfront.net/uploads/vehicles/display_pics/739c2443-5c6b-405a-9eb1-b70f30debe34.png",
+        "vehicle_type" : "Audi",
+        "vehicle_type_id" : 9
+    }
+]

@@ -154,7 +154,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RMA-oy-RXg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RMA-oy-RXg" firstAttribute="trailing" secondItem="kJT-T5-WqO" secondAttribute="trailing" constant="16" id="A2y-Sy-PSR"/>
                             <constraint firstItem="5Yn-gy-0ms" firstAttribute="centerX" secondItem="MSL-C4-hKB" secondAttribute="centerX" id="Ez7-Is-gVh"/>
