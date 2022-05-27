@@ -142,14 +142,22 @@
                                     <constraint firstAttribute="height" constant="34" id="uNk-EZ-ToT"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yn-gy-0ms">
+                                <rect key="frame" x="182" y="58" width="50" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RMA-oy-RXg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RMA-oy-RXg" firstAttribute="trailing" secondItem="kJT-T5-WqO" secondAttribute="trailing" constant="16" id="A2y-Sy-PSR"/>
                             <constraint firstItem="dbV-r3-ccw" firstAttribute="leading" secondItem="RMA-oy-RXg" secondAttribute="leading" id="BBr-Pl-dVv"/>
+                            <constraint firstItem="5Yn-gy-0ms" firstAttribute="centerX" secondItem="MSL-C4-hKB" secondAttribute="centerX" id="Ez7-Is-gVh"/>
                             <constraint firstItem="dbV-r3-ccw" firstAttribute="trailing" secondItem="RMA-oy-RXg" secondAttribute="trailing" id="NUc-kv-3EI"/>
                             <constraint firstItem="dbV-r3-ccw" firstAttribute="top" secondItem="MSL-C4-hKB" secondAttribute="top" id="RBg-6u-GpF"/>
+                            <constraint firstItem="5Yn-gy-0ms" firstAttribute="top" secondItem="kJT-T5-WqO" secondAttribute="bottom" constant="16" id="gpG-FK-X0g"/>
                             <constraint firstItem="dbV-r3-ccw" firstAttribute="bottom" secondItem="RMA-oy-RXg" secondAttribute="bottom" id="k60-Zg-Ryx"/>
                             <constraint firstItem="kJT-T5-WqO" firstAttribute="top" secondItem="MSL-C4-hKB" secondAttribute="top" constant="8" id="n7K-yF-DcD"/>
                             <constraint firstItem="kJT-T5-WqO" firstAttribute="leading" secondItem="RMA-oy-RXg" secondAttribute="leading" constant="16" id="qoL-Kh-2nh"/>
@@ -159,6 +167,7 @@
                     <size key="freeformSize" width="414" height="200"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="dbV-r3-ccw" id="f1L-rA-agf"/>
+                        <outlet property="cabTypeLabel" destination="5Yn-gy-0ms" id="z5H-Rb-DXV"/>
                         <outlet property="nonRunningCostLabel" destination="4lU-gS-Ol1" id="rRf-Pg-vQb"/>
                         <outlet property="runningCostLabel" destination="gm8-JM-zq3" id="yVV-E4-btZ"/>
                         <outlet property="seatsCountLabel" destination="2pJ-PY-Pug" id="cOx-FC-AvN"/>
@@ -175,6 +184,9 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
