@@ -18,8 +18,8 @@ class RideCellTests: XCTestCase {
         //let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewModel = MapViewModel()
         viewModel.fetchCabDetails(repository: MockRepository())
-        mapViewController = MapViewController.initWithStoryboard(viewModel: MapViewModel())
-        _ = mapViewController.view
+        //mapViewController = MapViewController.initWithStoryboard(viewModel: MapViewModel())
+        //_ = mapViewController.view
     }
 
     override func tearDownWithError() throws {

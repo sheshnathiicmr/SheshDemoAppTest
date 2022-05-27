@@ -60,10 +60,14 @@ class MapViewModel {
 
     private var selectedCab:Cab!
     
-    ///MARK:- Methods
-    func fetchCabDetails(repository:CabRepositoryProtocol) {
-        self.delegate?.stateChanged(newState: self.state) //set initial state
+    init(repository:CabRepositoryProtocol) {
         self.repository = repository
+        
+    }
+    
+    ///MARK:- Methods
+    func fetchCabsData() {
+        self.delegate?.stateChanged(newState: self.state) //set initial state
         self.repository.fetchCabs { result in
             switch result {
             case let .success(cabs):

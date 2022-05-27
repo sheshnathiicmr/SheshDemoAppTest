@@ -25,6 +25,7 @@ class MapViewController: UIViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        viewModel.delegate = mapViewController
         mapViewController.viewModel = viewModel
         return mapViewController
     }
@@ -32,9 +33,7 @@ class MapViewController: UIViewController {
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = MapViewModel()
-        self.viewModel.delegate = self
-        self.viewModel.fetchCabDetails(repository: CabRepository())
+        self.viewModel.fetchCabsData()
         self.mapView.delegate = self
         self.setAppearance()
     }
