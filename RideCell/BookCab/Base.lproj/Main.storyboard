@@ -28,6 +28,17 @@
                                     <segue destination="vWI-eD-r18" kind="embed" id="0Ir-1J-LIJ"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="AJl-h5-M8g">
+                                <rect key="frame" x="16" y="806" width="382" height="40"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.31764705879999999" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="LkK-Ys-397"/>
+                                    <constraint firstAttribute="height" constant="40" id="WUc-5C-3iO"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reserve This Car"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-IO-rUn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
@@ -48,13 +59,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AJl-h5-M8g" secondAttribute="bottom" constant="16" id="5oK-r5-th9"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6zB-OH-qgb"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9mE-BY-6ns"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AJl-h5-M8g" secondAttribute="trailing" constant="16" id="BFB-gk-hvb"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EuW-pE-aZH"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSQ-ff-brS"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBf-mR-gTw"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YMp-xa-vXj"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YZJ-8d-W4E"/>
+                            <constraint firstItem="AJl-h5-M8g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="baU-b0-JRC"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZw-wW-2qZ"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fV3-e2-VBh"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lxT-qH-DoP"/>
@@ -65,6 +79,7 @@
                         <outlet property="mapView" destination="Nus-Tc-Zxz" id="ZK6-i0-44c"/>
                         <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
                         <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
+                        <outlet property="reserveCarButton" destination="AJl-h5-M8g" id="wMs-nx-1v2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,32 +104,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-JM-zq3">
-                                <rect key="frame" x="186" y="89.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dbV-r3-ccw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kJT-T5-WqO">
+                                <rect key="frame" x="16" y="8" width="382" height="34"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tkk-IW-Lb6">
+                                        <rect key="frame" x="0.0" y="7.5" width="27" height="19"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 C / Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-JM-zq3">
+                                        <rect key="frame" x="29" y="7" width="105" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1BM-ur-2tz">
+                                        <rect key="frame" x="136" y="7.5" width="27" height="19"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-PY-Pug">
+                                        <rect key="frame" x="165" y="7" width="77.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkingsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EES-wK-uv2">
+                                        <rect key="frame" x="244.5" y="7.5" width="27" height="19"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 C / Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-gS-Ol1">
+                                        <rect key="frame" x="273.5" y="7" width="108.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="uNk-EZ-ToT"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RMA-oy-RXg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gm8-JM-zq3" firstAttribute="centerY" secondItem="MSL-C4-hKB" secondAttribute="centerY" id="aje-9k-a8X"/>
-                            <constraint firstItem="gm8-JM-zq3" firstAttribute="centerX" secondItem="MSL-C4-hKB" secondAttribute="centerX" id="rMp-lH-Jds"/>
+                            <constraint firstItem="RMA-oy-RXg" firstAttribute="trailing" secondItem="kJT-T5-WqO" secondAttribute="trailing" constant="16" id="A2y-Sy-PSR"/>
+                            <constraint firstItem="dbV-r3-ccw" firstAttribute="leading" secondItem="RMA-oy-RXg" secondAttribute="leading" id="BBr-Pl-dVv"/>
+                            <constraint firstItem="dbV-r3-ccw" firstAttribute="trailing" secondItem="RMA-oy-RXg" secondAttribute="trailing" id="NUc-kv-3EI"/>
+                            <constraint firstItem="dbV-r3-ccw" firstAttribute="top" secondItem="MSL-C4-hKB" secondAttribute="top" id="RBg-6u-GpF"/>
+                            <constraint firstItem="dbV-r3-ccw" firstAttribute="bottom" secondItem="RMA-oy-RXg" secondAttribute="bottom" id="k60-Zg-Ryx"/>
+                            <constraint firstItem="kJT-T5-WqO" firstAttribute="top" secondItem="MSL-C4-hKB" secondAttribute="top" constant="8" id="n7K-yF-DcD"/>
+                            <constraint firstItem="kJT-T5-WqO" firstAttribute="leading" secondItem="RMA-oy-RXg" secondAttribute="leading" constant="16" id="qoL-Kh-2nh"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="200"/>
                     <connections>
-                        <outlet property="cabNumberPlateLabel" destination="gm8-JM-zq3" id="1Qh-vd-0pE"/>
+                        <outlet property="backgroundImageView" destination="dbV-r3-ccw" id="f1L-rA-agf"/>
+                        <outlet property="nonRunningCostLabel" destination="4lU-gS-Ol1" id="rRf-Pg-vQb"/>
+                        <outlet property="runningCostLabel" destination="gm8-JM-zq3" id="yVV-E4-btZ"/>
+                        <outlet property="seatsCountLabel" destination="2pJ-PY-Pug" id="cOx-FC-AvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-bP-n8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="84"/>
+            <point key="canvasLocation" x="1663.7681159420292" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="car.circle" catalog="system" width="128" height="121"/>
+        <image name="parkingsign.circle" catalog="system" width="128" height="121"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

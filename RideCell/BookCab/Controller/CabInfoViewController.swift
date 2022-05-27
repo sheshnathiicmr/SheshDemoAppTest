@@ -10,9 +10,12 @@ import UIKit
 class CabInfoViewController: UIViewController {
 
     ///MARK:- Outlets
-    @IBOutlet weak var cabNumberPlateLabel: UILabel!
+    @IBOutlet weak var runningCostLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
+    @IBOutlet weak var seatsCountLabel: UILabel!
     
+    @IBOutlet weak var nonRunningCostLabel: UILabel!
     ///MARK:- Proporties
     var cab:Cab!
     
@@ -29,7 +32,8 @@ class CabInfoViewController: UIViewController {
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cabNumberPlateLabel.text = self.cab.licensePlateNumber
+        self.runningCostLabel.text = self.cab.pool
+        
     }
     
 }

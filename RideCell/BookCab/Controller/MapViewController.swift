@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     ///MARK:- Outlets
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var reserveCarButton: UIButton!
     @IBOutlet weak var overlayMessageLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
     ///MARK:- Propterties
@@ -25,6 +26,7 @@ class MapViewController: UIViewController {
         self.viewModel = MapViewModel()
         self.viewModel.initialize(repository: CabRepository(), delegate: self)
         self.mapView.delegate = self
+        self.setAppearance()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,6 +37,10 @@ class MapViewController: UIViewController {
     }
     
     ///MARK:- HelperMethods
+    private func setAppearance() {
+        self.reserveCarButton.layer.cornerRadius = 4.0
+    }
+    
     private func zoomToCabLocation(cab:Cab) {
         guard let region = self.viewModel.getRegion(for: cab) else { return }
         self.mapView.setRegion(region, animated: true)
