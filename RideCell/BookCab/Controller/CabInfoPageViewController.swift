@@ -10,8 +10,6 @@ import UIKit
 class CabInfoPageViewController: UIPageViewController {
 
     ///MARK:- Propterties
-    private var selectedCab:Cab?
-    
     var currentCab: Cab? {
         guard let vc = viewControllers?.first as? CabInfoViewController else { return nil }
         return cabs.first { cabElement in
@@ -31,11 +29,11 @@ class CabInfoPageViewController: UIPageViewController {
     }
     
     func selectedCabChanged(cab: Cab) {
-        self.selectedCab = cab
-        if let cab = self.selectedCab {
-            let cabInfoVC = self.controller(for: cab)
-            setViewControllers([cabInfoVC], direction: .forward, animated: true, completion: nil)
+        if currentCab == cab {
+            return
         }
+        let cabInfoVC = self.controller(for: cab)
+        setViewControllers([cabInfoVC], direction: .forward, animated: true, completion: nil)
     }
     
     func controller(for cab:Cab) -> CabInfoViewController {

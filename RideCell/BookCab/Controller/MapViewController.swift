@@ -70,10 +70,10 @@ extension MapViewController: MapViewModelDelegate {
         case .loaded(let cabs):
             if let cab = self.viewModel.getSelectedCab() {
                 self.zoomToCabLocation(cab: cab)
+                self.addCabAnnotationOnMap(cabs: cabs)
                 self.cabInfoPageViewController.cabs = cabs
                 self.cabInfoPageViewController.selectedCabChanged(cab: cab)
             }
-            self.addCabAnnotationOnMap(cabs: cabs)
         case .failed(let customError):
             self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
         }
@@ -101,7 +101,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let cabPinView = view as? CabPin {
             if let cabPointAnnotation = cabPinView.annotation as? CabPointAnnotation {
-                //self.cabInfoPageViewController.selectedCabChanged(cab: cabPointAnnotation.cab)
+                self.cabInfoPageViewController.selectedCabChanged(cab: cabPointAnnotation.cab)
             }
         }
     }
@@ -114,7 +114,6 @@ extension MapViewController: CabSelectionChangeDelegate {
         print("selected cab by page nav: \(cab.vehicleType)")
         self.viewModel.setSelectedCab(cab: cab)
         self.zoomToCabLocation(cab: cab)
-        
         let annotations = mapView.annotations.filter { annotation in
             guard let cabPointAnnotation = annotation as? CabPointAnnotation else { return false}
             return cabPointAnnotation.cab == cab
