@@ -17,8 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-Tc-Zxz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="662"/>
                             </mapView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0op-jA-kBE">
+                                <rect key="frame" x="0.0" y="662" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Qes-dn-OhS"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="vWI-eD-r18" kind="embed" id="0Ir-1J-LIJ"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-IO-rUn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
@@ -39,6 +48,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0op-jA-kBE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6zB-OH-qgb"/>
+                            <constraint firstItem="0op-jA-kBE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9mE-BY-6ns"/>
+                            <constraint firstItem="0op-jA-kBE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EuW-pE-aZH"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSQ-ff-brS"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBf-mR-gTw"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YMp-xa-vXj"/>
@@ -46,7 +58,7 @@
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZw-wW-2qZ"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fV3-e2-VBh"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lxT-qH-DoP"/>
-                            <constraint firstItem="Nus-Tc-Zxz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ycq-BU-56i"/>
+                            <constraint firstItem="Nus-Tc-Zxz" firstAttribute="bottom" secondItem="0op-jA-kBE" secondAttribute="top" id="tXX-ZT-WZg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -58,6 +70,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="83.705357142857139"/>
+        </scene>
+        <!--Cab Info Page View Controller-->
+        <scene sceneID="goM-s1-JBs">
+            <objects>
+                <pageViewController storyboardIdentifier="CabInfoPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="vWI-eD-r18" customClass="CabInfoPageViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="M9o-QM-u4h"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P9q-bJ-v8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="92"/>
+        </scene>
+        <!--Cab Info View Controller-->
+        <scene sceneID="0ni-bw-od9">
+            <objects>
+                <viewController storyboardIdentifier="CabInfoViewController" id="yyZ-uC-tY2" customClass="CabInfoViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MSL-C4-hKB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RMA-oy-RXg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-bP-n8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="84"/>
         </scene>
     </scenes>
     <resources>

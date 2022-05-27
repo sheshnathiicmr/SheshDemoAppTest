@@ -17,12 +17,20 @@ class MapViewController: UIViewController {
     @IBOutlet weak var overlayView: UIView!
     ///MARK:- Propterties
     var viewModel:MapViewModel!
+    var cabInfoPageViewController:CabInfoPageViewController!
     
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = MapViewModel(repository: CabRepository(), delegate: self)
         self.mapView.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cabInfoPageVC = segue.destination as? CabInfoPageViewController {
+            self.cabInfoPageViewController = cabInfoPageVC
+            self.cabInfoPageViewController?.cabInfoPagedelegate = self
+        }
     }
     
     ///MARK:- HelperMethods
@@ -38,12 +46,11 @@ class MapViewController: UIViewController {
             // Drop a pin at cab's Current Location
             guard let lat = cab.lat, let lng = cab.lng else { return }
             let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-            
-            let myAnnotation: MKPointAnnotation = MKPointAnnotation()
-            myAnnotation.coordinate = location
-            myAnnotation.title = cab.licensePlateNumber
-            myAnnotation.subtitle = cab.vehicleMake
-            mapView.addAnnotation(myAnnotation)
+            let cabAnnotation = CabPointAnnotation(cab: cab)
+            cabAnnotation.coordinate = location
+            cabAnnotation.title = cab.licensePlateNumber
+            cabAnnotation.subtitle = cab.vehicleMake
+            mapView.addAnnotation(cabAnnotation)
         }
     }
 }
@@ -82,5 +89,20 @@ extension MapViewController: MKMapViewDelegate {
             annotationView!.annotation = annotation
         }
        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let cabPinView = view as? CabPin {
+            if let cabPointAnnotation = cabPinView.annotation as? CabPointAnnotation {
+                print("cab id: \(cabPointAnnotation.cab.id)")
+            }
+        }
+    }
+}
+
+extension MapViewController: CabSelectionChangeDelegate {
+    
+    func selectedCabChanged(cab: Cab) {
+        
     }
 }
