@@ -7,7 +7,12 @@
 
 import Foundation
 
-class Cab {
+class Cab: Equatable {
+    
+    static func == (lhs: Cab, rhs: Cab) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     
     ///MARK:- Properties
     var id:Int

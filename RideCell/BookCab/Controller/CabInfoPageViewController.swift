@@ -11,6 +11,14 @@ class CabInfoPageViewController: UIPageViewController {
 
     ///MARK:- Propterties
     private var selectedCab:Cab?
+    
+    var currentCab: Cab? {
+        guard let vc = viewControllers?.first as? CabInfoViewController else { return nil }
+        return cabs.first { cabElement in
+            return cabElement == vc.cab
+        }
+    }
+    
     var cabs:[Cab]!
     var cabInfoPagedelegate:CabSelectionChangeDelegate?
     
@@ -24,7 +32,6 @@ class CabInfoPageViewController: UIPageViewController {
     
     func selectedCabChanged(cab: Cab) {
         self.selectedCab = cab
-        print("selected in pages cab: \(cab.id)")
         if let cab = self.selectedCab {
             let cabInfoVC = self.controller(for: cab)
             setViewControllers([cabInfoVC], direction: .forward, animated: true, completion: nil)
@@ -45,8 +52,7 @@ extension CabInfoPageViewController: UIPageViewControllerDataSource {
         if var currentCabIndex = self.cabs.firstIndex(where: {$0 === cabInfoVC.cab}) {
             if currentCabIndex > 0 {
                 currentCabIndex = currentCabIndex - 1
-                self.selectedCab = self.cabs[currentCabIndex]
-                guard let cab = self.selectedCab else { return nil }
+                let cab = self.cabs[currentCabIndex]
                 return controller(for: cab)
             }
         }
@@ -58,8 +64,7 @@ extension CabInfoPageViewController: UIPageViewControllerDataSource {
         if var currentCabIndex = self.cabs.firstIndex(where: {$0 === cabInfoVC.cab}) {
             if currentCabIndex < (self.cabs.count-1) {
                 currentCabIndex = currentCabIndex + 1
-                self.selectedCab = self.cabs[currentCabIndex]
-                guard let cab = self.selectedCab else { return nil }
+                let cab = self.cabs[currentCabIndex]
                 return controller(for: cab)
             }
         }
@@ -73,7 +78,7 @@ extension CabInfoPageViewController: UIPageViewControllerDelegate {
         if (!completed){
             return
         }
-        if let currentCab = self.selectedCab {
+        if let currentCab = self.currentCab {
             self.cabInfoPagedelegate?.selectedCabChanged(cab: currentCab)
         }
     }
