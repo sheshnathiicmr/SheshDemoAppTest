@@ -18,4 +18,9 @@ class CabInfoPageViewController: UIPageViewController {
         super.viewDidLoad()
     }
     
+    func selectedCabChanged(cab: Cab) {
+        self.selectedCab = cab
+        print("selected cab: \(cab.id)")
+    }
+    
 }

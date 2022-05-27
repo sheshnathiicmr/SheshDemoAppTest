@@ -22,7 +22,8 @@ class MapViewController: UIViewController {
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = MapViewModel(repository: CabRepository(), delegate: self)
+        self.viewModel = MapViewModel()
+        self.viewModel.initialize(repository: CabRepository(), delegate: self)
         self.mapView.delegate = self
     }
     
@@ -34,25 +35,20 @@ class MapViewController: UIViewController {
     }
     
     ///MARK:- HelperMethods
-    private func zoomToFirstCabLocation(cab:Cab) {
-        guard let lat = cab.lat, let lng = cab.lng else { return }
-        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+    private func zoomToCabLocation(cab:Cab) {
+        guard let region = self.viewModel.getRegion(for: cab) else { return }
         self.mapView.setRegion(region, animated: true)
     }
     
     private func addCabAnnotationOnMap(cabs:[Cab]) {
         for cab in cabs {
             // Drop a pin at cab's Current Location
-            guard let lat = cab.lat, let lng = cab.lng else { return }
-            let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-            let cabAnnotation = CabPointAnnotation(cab: cab)
-            cabAnnotation.coordinate = location
-            cabAnnotation.title = cab.licensePlateNumber
-            cabAnnotation.subtitle = cab.vehicleMake
-            mapView.addAnnotation(cabAnnotation)
+            if let cabAnnotation = self.viewModel.getAnnotation(for: cab) {
+                mapView.addAnnotation(cabAnnotation)
+            }
         }
     }
+    
 }
 
 extension MapViewController: MapViewModelDelegate {
@@ -65,7 +61,7 @@ extension MapViewController: MapViewModelDelegate {
             break
         case .loaded(let cabs):
             if let firstCab = cabs.first {
-                self.zoomToFirstCabLocation(cab: firstCab)
+                self.zoomToCabLocation(cab: firstCab)
             }
             self.addCabAnnotationOnMap(cabs: cabs)
         case .failed(let customError):
@@ -94,7 +90,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let cabPinView = view as? CabPin {
             if let cabPointAnnotation = cabPinView.annotation as? CabPointAnnotation {
-                print("cab id: \(cabPointAnnotation.cab.id)")
+                self.cabInfoPageViewController.selectedCabChanged(cab: cabPointAnnotation.cab)
             }
         }
     }
@@ -103,6 +99,10 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: CabSelectionChangeDelegate {
     
     func selectedCabChanged(cab: Cab) {
-        
+        self.viewModel.setSelectedCab(cab: cab)
+        if let cabAnnotation = self.viewModel.getAnnotation(for: cab) {
+            mapView.selectAnnotation(cabAnnotation, animated: true)
+            self.zoomToCabLocation(cab: cab)
+        }
     }
 }

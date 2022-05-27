@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 enum MapState {
     case loading
@@ -52,19 +53,15 @@ protocol CabSelectionChangeDelegate {
 class MapViewModel {
 
     ///MARK:- Proporties
-    private var delegate:MapViewModelDelegate!
+    var delegate:MapViewModelDelegate!
     private var repository:CabRepositoryProtocol!
     
-    private var state:MapState = .loading {
-        didSet{
-            self.delegate.stateChanged(newState: self.state)
-        }
-    }
+    private var state:MapState = .loading
 
     private var selectedCab:Cab!
     
     ///MARK:- Initialiser
-    init(repository:CabRepositoryProtocol, delegate:MapViewModelDelegate) {
+    func initialize(repository:CabRepositoryProtocol, delegate:MapViewModelDelegate) {
         self.delegate = delegate
         self.delegate.stateChanged(newState: self.state) //set initial state
         self.repository = repository
@@ -76,6 +73,7 @@ class MapViewModel {
             case .failure(let error) :
                 self.state = .failed(error)
             }
+            self.delegate.stateChanged(newState: self.state)
         }
     }
     
@@ -83,7 +81,25 @@ class MapViewModel {
         self.selectedCab = cab
     }
     
-    func getSelectedCab() -> Cab {
+    func getSelectedCab() -> Cab? {
+        
         return self.selectedCab
+    }
+    
+    func getRegion(for cab:Cab) -> MKCoordinateRegion? {
+        guard let lat = cab.lat, let lng = cab.lng else { return nil}
+        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
+        return region
+    }
+    
+    func getAnnotation(for cab:Cab) -> CabPointAnnotation? {
+        guard let lat = cab.lat, let lng = cab.lng else { return nil }
+        let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let cabAnnotation = CabPointAnnotation(cab: cab)
+        cabAnnotation.coordinate = location
+        cabAnnotation.title = cab.licensePlateNumber
+        cabAnnotation.subtitle = cab.vehicleMake
+        return cabAnnotation
     }
 }
