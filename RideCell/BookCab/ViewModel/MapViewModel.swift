@@ -55,14 +55,11 @@ class MapViewModel {
     ///MARK:- Proporties
     var delegate:MapViewModelDelegate?
     private var repository:CabRepositoryProtocol!
-    
     private var state:MapState = .loading
-
     private var selectedCab:Cab!
     
     init(repository:CabRepositoryProtocol) {
         self.repository = repository
-        
     }
     
     ///MARK:- Methods

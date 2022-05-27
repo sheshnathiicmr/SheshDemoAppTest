@@ -15,9 +15,11 @@ class RideCellTests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
-        let viewModel = MapViewModel(repository: MockRepository())
+        let mockRepository = MockRepository()
+        let viewModel = MapViewModel(repository: mockRepository)
         mapViewController = MapViewController.initWithStoryboard(viewModel: viewModel)
         _ = mapViewController.view
+        
     }
 
     override func tearDownWithError() throws {
