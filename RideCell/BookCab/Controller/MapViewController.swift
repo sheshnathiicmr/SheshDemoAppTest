@@ -20,11 +20,21 @@ class MapViewController: UIViewController {
     var viewModel:MapViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
     
+    ///MARK:- StaticMethods
+    class func initWithStoryboard(viewModel:MapViewModel) -> MapViewController {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        mapViewController.viewModel = viewModel
+        return mapViewController
+    }
+    
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = MapViewModel()
-        self.viewModel.fetchCabDetails(repository: CabRepository(), delegate: self)
+        self.viewModel.delegate = self
+        self.viewModel.fetchCabDetails(repository: CabRepository())
         self.mapView.delegate = self
         self.setAppearance()
     }

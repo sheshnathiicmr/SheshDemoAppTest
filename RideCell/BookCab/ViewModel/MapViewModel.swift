@@ -53,7 +53,7 @@ protocol CabSelectionChangeDelegate {
 class MapViewModel {
 
     ///MARK:- Proporties
-    var delegate:MapViewModelDelegate!
+    var delegate:MapViewModelDelegate?
     private var repository:CabRepositoryProtocol!
     
     private var state:MapState = .loading
@@ -61,9 +61,8 @@ class MapViewModel {
     private var selectedCab:Cab!
     
     ///MARK:- Methods
-    func fetchCabDetails(repository:CabRepositoryProtocol, delegate:MapViewModelDelegate) {
-        self.delegate = delegate
-        self.delegate.stateChanged(newState: self.state) //set initial state
+    func fetchCabDetails(repository:CabRepositoryProtocol) {
+        self.delegate?.stateChanged(newState: self.state) //set initial state
         self.repository = repository
         self.repository.fetchCabs { result in
             switch result {
@@ -73,7 +72,7 @@ class MapViewModel {
             case .failure(let error) :
                 self.state = .failed(error)
             }
-            self.delegate.stateChanged(newState: self.state)
+            self.delegate?.stateChanged(newState: self.state)
         }
     }
     
