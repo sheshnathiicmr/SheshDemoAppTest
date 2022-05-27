@@ -30,13 +30,14 @@ class RideCellTests: XCTestCase {
         mockRepository.fetchCabs { result in
             switch result {
             case .success(let cabs):
-                XCTAssertTrue(cabs.count == 4)
+                XCTAssertTrue(cabs.count == 4, "fetched object count not matched")
                 expectation.fulfill()
-            case .failure(let error):
+            case .failure(_):
+                XCTAssertTrue(false, "error in fetching cabs info")
                 expectation.fulfill()
             }
         }
-        wait(for: [expectation], timeout: 5.0)
+        wait(for: [expectation], timeout: 2.0)
     }
 
     func testPerformanceExample() throws {
