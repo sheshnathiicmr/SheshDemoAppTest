@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-Tc-Zxz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="662"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0op-jA-kBE">
-                                <rect key="frame" x="0.0" y="662" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="612" width="414" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Qes-dn-OhS"/>
+                                    <constraint firstAttribute="height" constant="250" id="Qes-dn-OhS"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="vWI-eD-r18" kind="embed" id="0Ir-1J-LIJ"/>
@@ -101,11 +101,15 @@
             <objects>
                 <viewController storyboardIdentifier="CabInfoViewController" id="yyZ-uC-tY2" customClass="CabInfoViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSL-C4-hKB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dbV-r3-ccw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <rect key="frame" x="82" y="100" width="250" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="h5t-3T-K4q"/>
+                                    <constraint firstAttribute="width" secondItem="dbV-r3-ccw" secondAttribute="height" multiplier="5:3" id="rSY-ah-IzE"/>
+                                </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kJT-T5-WqO">
                                 <rect key="frame" x="16" y="8" width="382" height="34"/>
@@ -153,18 +157,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RMA-oy-RXg" firstAttribute="trailing" secondItem="kJT-T5-WqO" secondAttribute="trailing" constant="16" id="A2y-Sy-PSR"/>
-                            <constraint firstItem="dbV-r3-ccw" firstAttribute="leading" secondItem="RMA-oy-RXg" secondAttribute="leading" id="BBr-Pl-dVv"/>
                             <constraint firstItem="5Yn-gy-0ms" firstAttribute="centerX" secondItem="MSL-C4-hKB" secondAttribute="centerX" id="Ez7-Is-gVh"/>
-                            <constraint firstItem="dbV-r3-ccw" firstAttribute="trailing" secondItem="RMA-oy-RXg" secondAttribute="trailing" id="NUc-kv-3EI"/>
-                            <constraint firstItem="dbV-r3-ccw" firstAttribute="top" secondItem="MSL-C4-hKB" secondAttribute="top" id="RBg-6u-GpF"/>
                             <constraint firstItem="5Yn-gy-0ms" firstAttribute="top" secondItem="kJT-T5-WqO" secondAttribute="bottom" constant="16" id="gpG-FK-X0g"/>
                             <constraint firstItem="dbV-r3-ccw" firstAttribute="bottom" secondItem="RMA-oy-RXg" secondAttribute="bottom" id="k60-Zg-Ryx"/>
                             <constraint firstItem="kJT-T5-WqO" firstAttribute="top" secondItem="MSL-C4-hKB" secondAttribute="top" constant="8" id="n7K-yF-DcD"/>
+                            <constraint firstItem="dbV-r3-ccw" firstAttribute="centerX" secondItem="MSL-C4-hKB" secondAttribute="centerX" id="pWY-0z-PVN"/>
                             <constraint firstItem="kJT-T5-WqO" firstAttribute="leading" secondItem="RMA-oy-RXg" secondAttribute="leading" constant="16" id="qoL-Kh-2nh"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="200"/>
+                    <size key="freeformSize" width="414" height="250"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="dbV-r3-ccw" id="f1L-rA-agf"/>
                         <outlet property="cabTypeLabel" destination="5Yn-gy-0ms" id="z5H-Rb-DXV"/>

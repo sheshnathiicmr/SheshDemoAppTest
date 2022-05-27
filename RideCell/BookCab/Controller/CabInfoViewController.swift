@@ -39,5 +39,17 @@ class CabInfoViewController: UIViewController {
         self.licensePlateNumberLabel.text = self.cab.licensePlateNumber
         self.nonRunningCostLabel.text = self.cab.transmissionMode
         self.cabTypeLabel.text = cab.vehicleType
+        self.setBackgroundImage()
+    }
+    
+    private func setBackgroundImage() {
+        self.backgroundImageView.image = UIImage() //remove image initially to avoid using wrong position image
+        let url = URL(string: cab.vehiclePicAbsoluteUrl)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                self.backgroundImageView.image = UIImage(data: data!)
+            }
+        }
     }
 }

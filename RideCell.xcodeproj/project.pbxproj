@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */; };
 		81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0C28409BF100EA77DE /* CabInfoViewController.swift */; };
-		81991B0F28409C8900EA77DE /* CabInfoPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0E28409C8900EA77DE /* CabInfoPageViewModel.swift */; };
 		81991B112840A28800EA77DE /* CabPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B102840A28800EA77DE /* CabPointAnnotation.swift */; };
 		81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58038283FE4DF000BC152 /* AppDelegate.swift */; };
 		81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803A283FE4DF000BC152 /* SceneDelegate.swift */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewController.swift; sourceTree = "<group>"; };
 		81991B0C28409BF100EA77DE /* CabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoViewController.swift; sourceTree = "<group>"; };
-		81991B0E28409C8900EA77DE /* CabInfoPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewModel.swift; sourceTree = "<group>"; };
 		81991B102840A28800EA77DE /* CabPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPointAnnotation.swift; sourceTree = "<group>"; };
 		81E58035283FE4DF000BC152 /* RideCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E58038283FE4DF000BC152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				81E5805A283FE864000BC152 /* MapViewModel.swift */,
-				81991B0E28409C8900EA77DE /* CabInfoPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -278,7 +275,6 @@
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
 				81E5806828400647000BC152 /* CabPin.swift in Sources */,
 				81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */,
-				81991B0F28409C8900EA77DE /* CabInfoPageViewModel.swift in Sources */,
 				81991B112840A28800EA77DE /* CabPointAnnotation.swift in Sources */,
 				81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */,
 			);
