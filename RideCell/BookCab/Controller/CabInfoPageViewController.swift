@@ -2,7 +2,7 @@
 //  CabInfoPageViewController.swift
 //  RideCell
 //
-//  Created by ityx  on 27/05/22.
+//  Created by sheshnath  on 27/05/22.
 //
 
 import UIKit
@@ -16,10 +16,8 @@ class CabInfoPageViewController: UIPageViewController {
             return cabElement == vc.cab
         }
     }
-    
     var cabs:[Cab]!
-    var cabInfoPagedelegate:CabSelectionChangeDelegate?
-    
+    var cabInfoPageDelegate:CabSelectionChangeDelegate?
     
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
@@ -28,6 +26,7 @@ class CabInfoPageViewController: UIPageViewController {
         delegate = self
     }
     
+    ///MARK:- HelperMethods
     func selectedCabChanged(cab: Cab) {
         if currentCab == cab {
             return
@@ -36,13 +35,14 @@ class CabInfoPageViewController: UIPageViewController {
         setViewControllers([cabInfoVC], direction: .forward, animated: true, completion: nil)
     }
     
-    func controller(for cab:Cab) -> CabInfoViewController {
+    private func controller(for cab:Cab) -> CabInfoViewController {
         let cabInfoVC = CabInfoViewController.initWithStoryboard(cab: cab)
         return cabInfoVC
     }
     
 }
 
+///MARK:- UIPageViewControllerDataSource
 extension CabInfoPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -70,6 +70,7 @@ extension CabInfoPageViewController: UIPageViewControllerDataSource {
     }
 }
 
+///MARK:- UIPageViewControllerDelegate
 extension CabInfoPageViewController: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -77,8 +78,7 @@ extension CabInfoPageViewController: UIPageViewControllerDelegate {
             return
         }
         if let currentCab = self.currentCab {
-            self.cabInfoPagedelegate?.selectedCabChanged(cab: currentCab)
+            self.cabInfoPageDelegate?.selectedCabChanged(cab: currentCab)
         }
     }
-    
 }

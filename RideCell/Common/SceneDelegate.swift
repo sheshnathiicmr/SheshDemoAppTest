@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  RideCell
 //
-//  Created by ityx  on 26/05/22.
+//  Created by sheshnath  on 26/05/22.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  MapViewModel.swift
 //  RideCell
 //
-//  Created by ityx  on 26/05/22.
+//  Created by sheshnath  on 26/05/22.
 //
 
 import Foundation
@@ -60,8 +60,8 @@ class MapViewModel {
 
     private var selectedCab:Cab!
     
-    ///MARK:- Initialiser
-    func initialize(repository:CabRepositoryProtocol, delegate:MapViewModelDelegate) {
+    ///MARK:- Methods
+    func fetchCabDetails(repository:CabRepositoryProtocol, delegate:MapViewModelDelegate) {
         self.delegate = delegate
         self.delegate.stateChanged(newState: self.state) //set initial state
         self.repository = repository

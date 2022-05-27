@@ -2,7 +2,7 @@
 //  CabInfoViewController.swift
 //  RideCell
 //
-//  Created by ityx  on 27/05/22.
+//  Created by sheshnath  on 27/05/22.
 //
 
 import UIKit
@@ -14,11 +14,10 @@ class CabInfoViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var seatsCountLabel: UILabel!
     @IBOutlet weak var nonRunningCostLabel: UILabel!
-    
     @IBOutlet weak var cabTypeLabel: UILabel!
+    
     ///MARK:- Proporties
     var cab:Cab!
-    
     
     ///MARK:- StaticMethods
     class func initWithStoryboard(cab:Cab) -> CabInfoViewController {
@@ -35,6 +34,7 @@ class CabInfoViewController: UIViewController {
         self.bindCabInfo()
     }
     
+    ///MARK:- HelperMethods
     private func bindCabInfo() {
         self.licensePlateNumberLabel.text = self.cab.licensePlateNumber
         self.seatsCountLabel.text = self.cab.seatCount

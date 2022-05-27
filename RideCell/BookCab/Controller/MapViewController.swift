@@ -2,7 +2,7 @@
 //  BookCabViewController.swift
 //  RideCell
 //
-//  Created by ityx  on 26/05/22.
+//  Created by sheshnath  on 26/05/22.
 //
 
 import UIKit
@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = MapViewModel()
-        self.viewModel.initialize(repository: CabRepository(), delegate: self)
+        self.viewModel.fetchCabDetails(repository: CabRepository(), delegate: self)
         self.mapView.delegate = self
         self.setAppearance()
     }
@@ -33,7 +33,7 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cabInfoPageVC = segue.destination as? CabInfoPageViewController {
             self.cabInfoPageViewController = cabInfoPageVC
-            self.cabInfoPageViewController?.cabInfoPagedelegate = self
+            self.cabInfoPageViewController?.cabInfoPageDelegate = self
         }
     }
     
@@ -73,6 +73,10 @@ extension MapViewController: MapViewModelDelegate {
                 self.addCabAnnotationOnMap(cabs: cabs)
                 self.cabInfoPageViewController.cabs = cabs
                 self.cabInfoPageViewController.selectedCabChanged(cab: cab)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                    guard let self = self else { return }
+                    self.selectedCabChanged(cab: cab)
+                }
             }
         case .failed(let customError):
             self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
