@@ -88,11 +88,26 @@
                     <view key="view" contentMode="scaleToFill" id="MSL-C4-hKB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-JM-zq3">
+                                <rect key="frame" x="186" y="89.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RMA-oy-RXg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gm8-JM-zq3" firstAttribute="centerY" secondItem="MSL-C4-hKB" secondAttribute="centerY" id="aje-9k-a8X"/>
+                            <constraint firstItem="gm8-JM-zq3" firstAttribute="centerX" secondItem="MSL-C4-hKB" secondAttribute="centerX" id="rMp-lH-Jds"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="200"/>
+                    <connections>
+                        <outlet property="cabNumberPlateLabel" destination="gm8-JM-zq3" id="1Qh-vd-0pE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-bP-n8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

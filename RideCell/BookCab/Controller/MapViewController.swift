@@ -60,8 +60,10 @@ extension MapViewController: MapViewModelDelegate {
         case .loading:
             break
         case .loaded(let cabs):
-            if let firstCab = cabs.first {
-                self.zoomToCabLocation(cab: firstCab)
+            if let cab = self.viewModel.getSelectedCab() {
+                self.zoomToCabLocation(cab: cab)
+                self.cabInfoPageViewController.cabs = cabs
+                self.cabInfoPageViewController.selectedCabChanged(cab: cab)
             }
             self.addCabAnnotationOnMap(cabs: cabs)
         case .failed(let customError):

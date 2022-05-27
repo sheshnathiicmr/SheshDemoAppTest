@@ -82,7 +82,6 @@ class MapViewModel {
     }
     
     func getSelectedCab() -> Cab? {
-        
         return self.selectedCab
     }
     
