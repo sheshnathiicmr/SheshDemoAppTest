@@ -24,7 +24,7 @@ class CabInfoPageViewController: UIPageViewController {
     
     func selectedCabChanged(cab: Cab) {
         self.selectedCab = cab
-        print("selected cab: \(cab.id)")
+        print("selected in pages cab: \(cab.id)")
         if let cab = self.selectedCab {
             let cabInfoVC = self.controller(for: cab)
             setViewControllers([cabInfoVC], direction: .forward, animated: true, completion: nil)
@@ -41,13 +41,29 @@ class CabInfoPageViewController: UIPageViewController {
 extension CabInfoPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let cab = self.selectedCab else { return nil }
-        return controller(for: cab)
+        guard let cabInfoVC = viewController as? CabInfoViewController else { return nil }
+        if var currentCabIndex = self.cabs.firstIndex(where: {$0 === cabInfoVC.cab}) {
+            if currentCabIndex > 0 {
+                currentCabIndex = currentCabIndex - 1
+                self.selectedCab = self.cabs[currentCabIndex]
+                guard let cab = self.selectedCab else { return nil }
+                return controller(for: cab)
+            }
+        }
+        return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let cab = self.selectedCab else { return nil }
-        return controller(for: cab)
+        guard let cabInfoVC = viewController as? CabInfoViewController else { return nil }
+        if var currentCabIndex = self.cabs.firstIndex(where: {$0 === cabInfoVC.cab}) {
+            if currentCabIndex < (self.cabs.count-1) {
+                currentCabIndex = currentCabIndex + 1
+                self.selectedCab = self.cabs[currentCabIndex]
+                guard let cab = self.selectedCab else { return nil }
+                return controller(for: cab)
+            }
+        }
+        return nil
     }
 }
 
@@ -57,8 +73,6 @@ extension CabInfoPageViewController: UIPageViewControllerDelegate {
         if (!completed){
             return
         }
-//        let pageIndex = self.currentIndex
-        //self.cardsPageViewControllerDelegate?.didChange(currentIndex: pageIndex)
         if let currentCab = self.selectedCab {
             self.cabInfoPagedelegate?.selectedCabChanged(cab: currentCab)
         }
