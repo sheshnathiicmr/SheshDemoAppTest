@@ -12,10 +12,10 @@ class MapViewController: UIViewController {
 
     ///MARK:- Outlets
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var reserveCarButton: UIButton!
     @IBOutlet weak var overlayMessageLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
+    
     ///MARK:- Propterties
     var viewModel:MapViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
@@ -29,6 +29,7 @@ class MapViewController: UIViewController {
         self.setAppearance()
     }
     
+    ///MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cabInfoPageVC = segue.destination as? CabInfoPageViewController {
             self.cabInfoPageViewController = cabInfoPageVC
@@ -57,6 +58,7 @@ class MapViewController: UIViewController {
     
 }
 
+///MARK:- ViewModelDelegate
 extension MapViewController: MapViewModelDelegate {
     
     func stateChanged(newState: MapState) {
@@ -78,6 +80,7 @@ extension MapViewController: MapViewModelDelegate {
     }
 }
 
+///MARK:- MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -104,6 +107,7 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
+///MARK:- selection change from page swipe
 extension MapViewController: CabSelectionChangeDelegate {
     
     func selectedCabChanged(cab: Cab) {
