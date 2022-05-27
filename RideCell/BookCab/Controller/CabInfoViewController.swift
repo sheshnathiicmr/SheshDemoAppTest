@@ -10,7 +10,7 @@ import UIKit
 class CabInfoViewController: UIViewController {
 
     ///MARK:- Outlets
-    @IBOutlet weak var runningCostLabel: UILabel!
+    @IBOutlet weak var licensePlateNumberLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var seatsCountLabel: UILabel!
     @IBOutlet weak var nonRunningCostLabel: UILabel!
@@ -36,9 +36,8 @@ class CabInfoViewController: UIViewController {
     }
     
     private func bindCabInfo() {
-        self.runningCostLabel.text = "\(self.cab.remainingMileage) / Min"
+        self.licensePlateNumberLabel.text = self.cab.licensePlateNumber
         self.nonRunningCostLabel.text = self.cab.transmissionMode
-        
         self.cabTypeLabel.text = cab.vehicleType
     }
 }

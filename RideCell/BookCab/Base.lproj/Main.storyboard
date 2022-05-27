@@ -168,8 +168,8 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="dbV-r3-ccw" id="f1L-rA-agf"/>
                         <outlet property="cabTypeLabel" destination="5Yn-gy-0ms" id="z5H-Rb-DXV"/>
+                        <outlet property="licensePlateNumberLabel" destination="gm8-JM-zq3" id="yVV-E4-btZ"/>
                         <outlet property="nonRunningCostLabel" destination="4lU-gS-Ol1" id="rRf-Pg-vQb"/>
-                        <outlet property="runningCostLabel" destination="gm8-JM-zq3" id="yVV-E4-btZ"/>
                         <outlet property="seatsCountLabel" destination="2pJ-PY-Pug" id="cOx-FC-AvN"/>
                     </connections>
                 </viewController>
