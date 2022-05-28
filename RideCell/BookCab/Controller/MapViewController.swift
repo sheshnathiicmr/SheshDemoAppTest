@@ -112,6 +112,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let cabPinView = view as? CabPin {
             if let cabPointAnnotation = cabPinView.annotation as? CabPointAnnotation {
+                self.viewModel.setSelectedCab(cab: cabPointAnnotation.cab)
                 self.cabInfoPageViewController.selectedCabChanged(cab: cabPointAnnotation.cab)
             }
         }
@@ -122,6 +123,9 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: CabSelectionChangeDelegate {
     
     func selectedCabChanged(cab: Cab) {
+        if cab == self.viewModel.getSelectedCab() {
+            return
+        }
         self.viewModel.setSelectedCab(cab: cab)
         self.zoomToCabLocation(cab: cab)
         let annotations = mapView.annotations.filter { annotation in
