@@ -2,7 +2,7 @@
 //  main.swift
 //  RideCell
 //
-//  Created by ityx  on 28/05/22.
+//  Created by Sheshnath  on 28/05/22.
 //
 
 import UIKit
