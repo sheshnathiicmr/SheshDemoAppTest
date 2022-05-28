@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8103C4D52841EFE5005B4DD4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D42841EFE5005B4DD4 /* main.swift */; };
+		8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */; };
+		8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */; };
 		8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195BFF7284138F80049B1EF /* RideCellTests.swift */; };
 		8195C000284139B10049B1EF /* test_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 8195BFFF284139B10049B1EF /* test_sample.json */; };
 		8195C003284139FD0049B1EF /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195C002284139FD0049B1EF /* MockRepository.swift */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8103C4D42841EFE5005B4DD4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		8195BFF5284138F80049B1EF /* RideCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195BFF7284138F80049B1EF /* RideCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCellTests.swift; sourceTree = "<group>"; };
 		8195BFFF284139B10049B1EF /* test_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_sample.json; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 			children = (
 				8195C00428413D100049B1EF /* Helper */,
 				8195BFF7284138F80049B1EF /* RideCellTests.swift */,
+				8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */,
+				8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */,
 			);
 			path = BookCabTest;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 				81E58059283FE80B000BC152 /* Extensions */,
 				81E58038283FE4DF000BC152 /* AppDelegate.swift */,
 				81E5803A283FE4DF000BC152 /* SceneDelegate.swift */,
+				8103C4D42841EFE5005B4DD4 /* main.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -355,6 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */,
+				8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */,
 				8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */,
 				8195C003284139FD0049B1EF /* MockRepository.swift in Sources */,
 			);
@@ -372,6 +383,7 @@
 				81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */,
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,
 				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
+				8103C4D52841EFE5005B4DD4 /* main.swift in Sources */,
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
 				81E5806828400647000BC152 /* CabPin.swift in Sources */,
 				81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */,

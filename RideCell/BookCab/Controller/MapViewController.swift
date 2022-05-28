@@ -21,12 +21,10 @@ class MapViewController: UIViewController {
     var cabInfoPageViewController:CabInfoPageViewController!
     
     ///MARK:- StaticMethods
-    class func initWithStoryboard(viewModel:MapViewModel) -> MapViewController {
+    class func initWithStoryboard() -> MapViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
-        viewModel.delegate = mapViewController
-        mapViewController.viewModel = viewModel
         return mapViewController
     }
     

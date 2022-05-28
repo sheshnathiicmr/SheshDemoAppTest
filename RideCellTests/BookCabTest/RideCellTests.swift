@@ -10,9 +10,19 @@ import XCTest
 
 class RideCellTests: XCTestCase {
 
+    var mapViewController:MapViewController!
+    var mapViewModel:MapViewModel!
+    var mockRepository:MockRepository!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
+        self.mapViewController = MapViewController.initWithStoryboard()
+        
+        self.mockRepository = MockRepository()
+        self.mapViewModel = MapViewModel(repository: self.mockRepository)
+        self.mapViewController.viewModel = self.mapViewModel
+        
     }
 
     override func tearDownWithError() throws {
@@ -21,8 +31,7 @@ class RideCellTests: XCTestCase {
 
     func testRepositoryFetch() throws {
         let expectation = XCTestExpectation(description: "expect getting annotation count")
-        let mockRepository = MockRepository()
-        mockRepository.fetchCabs { result in
+        self.mockRepository.fetchCabs { result in
             switch result {
             case .success(let cabs):
                 XCTAssertTrue(cabs.count == 4, "fetched object count not matched")
@@ -35,18 +44,20 @@ class RideCellTests: XCTestCase {
         wait(for: [expectation], timeout: 2.0)
     }
 
-    func testAnnotation() throws {
+    func testAnnotationPointInfo() throws {
         let expectation = XCTestExpectation(description: "checking annotation information set correctly")
-        let mockRepository = MockRepository()
-        let viewModel = MapViewModel(repository: mockRepository)
-        mockRepository.fetchCabs { result in
+        self.mockRepository.fetchCabs { [weak self] result in
+            guard let self = self else {
+                XCTAssertTrue(true, "failed self is nil")
+                return
+            }
             switch result {
             case .success(let cabs):
                 guard let cab = cabs.first else {
                     XCTAssertTrue(true, "failed in getting cabs")
                     return
                 }
-                let annotation = viewModel.getAnnotation(for: cab)
+                let annotation = self.mapViewModel.getAnnotation(for: cab)
                 XCTAssertTrue(annotation?.title == cab.licensePlateNumber, "annotation title is not correct")
                 XCTAssertTrue(annotation?.subtitle == cab.vehicleType, "annotation subtitle is not correct")
                 expectation.fulfill()
@@ -56,6 +67,11 @@ class RideCellTests: XCTestCase {
             }
         }
         wait(for: [expectation], timeout: 2.0)
+    }
+    
+    func testMapIsPresent() throws {
+        let _ = self.mapViewController.view
+        XCTAssertTrue(self.mapViewController.mapView != nil, "map is shown")
     }
     
     func testPerformanceExample() throws {

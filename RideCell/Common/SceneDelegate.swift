@@ -13,13 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let scene = (scene as? UIWindowScene) else { return }
-        let viewModel = MapViewModel(repository: CabRepository())
-        let mapViewController = MapViewController.initWithStoryboard(viewModel: viewModel)
-        let window = UIWindow(windowScene: scene)
-        self.window = window
-        self.window?.rootViewController = mapViewController
-        self.window?.makeKeyAndVisible()
+        guard let _ = (scene as? UIWindowScene) else { return }
+        if let mapViewController = self.window?.rootViewController as? MapViewController {
+            let viewModel = MapViewModel(repository: CabRepository())
+            mapViewController.viewModel = viewModel
+            viewModel.delegate = mapViewController
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
