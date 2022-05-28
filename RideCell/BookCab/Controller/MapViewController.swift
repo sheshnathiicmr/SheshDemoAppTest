@@ -76,13 +76,12 @@ extension MapViewController: MapViewModelDelegate {
             break
         case .loaded(let cabs):
             if let cab = self.viewModel.getSelectedCab() {
-                self.zoomToCabLocation(cab: cab)
                 self.addCabAnnotationOnMap(cabs: cabs)
                 self.cabInfoPageViewController.cabs = cabs
                 self.cabInfoPageViewController.selectedCabChanged(cab: cab)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
                     guard let self = self else { return }
-                    self.selectedCabChanged(cab: cab)
+                    self.selectedCabChanged(cab: cab, isInitialSelection: true)
                 }
             }
         case .failed(let customError):
@@ -122,8 +121,8 @@ extension MapViewController: MKMapViewDelegate {
 ///MARK:- selection change from page swipe
 extension MapViewController: CabSelectionChangeDelegate {
     
-    func selectedCabChanged(cab: Cab) {
-        if cab == self.viewModel.getSelectedCab() {
+    func selectedCabChanged(cab: Cab, isInitialSelection:Bool) {
+        if cab == self.viewModel.getSelectedCab()  && isInitialSelection == false {
             return
         }
         self.viewModel.setSelectedCab(cab: cab)

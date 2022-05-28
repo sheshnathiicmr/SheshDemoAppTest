@@ -78,7 +78,7 @@ extension CabInfoPageViewController: UIPageViewControllerDelegate {
             return
         }
         if let currentCab = self.currentCab {
-            self.cabInfoPageDelegate?.selectedCabChanged(cab: currentCab)
+            self.cabInfoPageDelegate?.selectedCabChanged(cab: currentCab, isInitialSelection: false)
         }
     }
 }

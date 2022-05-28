@@ -46,7 +46,7 @@ protocol MapViewModelDelegate {
 }
 
 protocol CabSelectionChangeDelegate {
-    func selectedCabChanged(cab:Cab)
+    func selectedCabChanged(cab:Cab, isInitialSelection:Bool)
 }
 
 
