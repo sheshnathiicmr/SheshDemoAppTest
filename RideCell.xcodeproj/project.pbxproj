@@ -31,6 +31,8 @@
 		81E5806828400647000BC152 /* CabPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5806728400647000BC152 /* CabPin.swift */; };
 		81E5806A28400EB3000BC152 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5806928400EB3000BC152 /* String.swift */; };
 		81E5806E28400F2D000BC152 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81E5807028400F2D000BC152 /* Localizable.strings */; };
+		81FD31202870A55600A257F1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD311F2870A55600A257F1 /* BaseViewController.swift */; };
+		81FD31222870A5F000A257F1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31212870A5F000A257F1 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		81E5806728400647000BC152 /* CabPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPin.swift; sourceTree = "<group>"; };
 		81E5806928400EB3000BC152 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		81E5806F28400F2D000BC152 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		81FD311F2870A55600A257F1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		81FD31212870A5F000A257F1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,9 +194,9 @@
 		81E5804F283FE55C000BC152 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				81E5803C283FE4DF000BC152 /* MapViewController.swift */,
-				81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */,
-				81991B0C28409BF100EA77DE /* CabInfoViewController.swift */,
+				81FD311E2870A52A00A257F1 /* ListView */,
+				81FD311D2870A51300A257F1 /* MapView */,
+				81FD311F2870A55600A257F1 /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +254,24 @@
 				81E5807028400F2D000BC152 /* Localizable.strings */,
 			);
 			path = Localized;
+			sourceTree = "<group>";
+		};
+		81FD311D2870A51300A257F1 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				81E5803C283FE4DF000BC152 /* MapViewController.swift */,
+				81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */,
+				81991B0C28409BF100EA77DE /* CabInfoViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		81FD311E2870A52A00A257F1 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				81FD31212870A5F000A257F1 /* ListViewController.swift */,
+			);
+			path = ListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81FD31222870A5F000A257F1 /* ListViewController.swift in Sources */,
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
 				81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */,
 				81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */,
@@ -379,6 +402,7 @@
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
 				81E5806828400647000BC152 /* CabPin.swift in Sources */,
 				81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */,
+				81FD31202870A55600A257F1 /* BaseViewController.swift in Sources */,
 				81991B112840A28800EA77DE /* CabPointAnnotation.swift in Sources */,
 				81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */,
 			);

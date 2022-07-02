@@ -82,11 +82,28 @@
                         <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
                         <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
                         <outlet property="reserveCarButton" destination="AJl-h5-M8g" id="wMs-nx-1v2"/>
+                        <segue destination="PNS-db-IWb" kind="show" identifier="cabListSegue" id="hDS-iQ-CXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1023.1884057971015" y="83.705357142857139"/>
+        </scene>
+        <!--Cabs-->
+        <scene sceneID="mtn-Zt-fqS">
+            <objects>
+                <viewController id="PNS-db-IWb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WrJ-w1-Ycp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="On9-1c-ZYU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cabs" id="i5E-co-4rS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aG1-Md-2Dz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="851"/>
         </scene>
         <!--Cab Info Page View Controller-->
         <scene sceneID="goM-s1-JBs">

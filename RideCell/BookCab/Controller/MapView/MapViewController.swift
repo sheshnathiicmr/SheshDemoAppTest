@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: BaseViewController {
 
     ///MARK:- Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -44,20 +44,9 @@ class MapViewController: UIViewController {
         }
     }
     
-    
     ///MARK:- HelperMethods
     private func setAppearance() {
         self.reserveCarButton.layer.cornerRadius = 4.0
-        self.addLayoutChangeNavigationButton()
-    }
-    
-    private func addLayoutChangeNavigationButton() {
-        let saveButton = UIBarButtonItem(title: "Save".localized, style: .plain, target: self, action: #selector(layoutChangeTapped))
-        self.navigationItem.rightBarButtonItem = saveButton
-    }
-    
-    @objc func layoutChangeTapped()  {
-        
     }
     
     private func zoomToCabLocation(cab:Cab) {
