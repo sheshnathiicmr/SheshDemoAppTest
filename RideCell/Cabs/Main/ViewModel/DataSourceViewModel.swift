@@ -80,4 +80,13 @@ class DataSourceViewModel {
         return self.selectedCab
     }
     
+    func getCabs() -> [Cab]? {
+        switch self.state {
+        case .loaded(let cabs):
+            return cabs
+        default:
+            return nil
+        }
+    }
+    
 }

@@ -85,7 +85,7 @@ class MainViewController: UIViewController {
         let button = UIButton.init(type: .custom)
         self.layoutTypeButton = button
         button.addTarget(self, action: #selector(displayNextLayout), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
+        button.frame = CGRect(x: 0, y: 0, width: 56, height: 56)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
     }
@@ -101,6 +101,9 @@ class MainViewController: UIViewController {
             self.showMapView()
         }
         self.layoutTypeButton?.setImage(UIImage(named: self.layoutType.layoutButtonIcon), for: .normal)
+        if let baseLayout = self.children.first as? BaseLayoutViewController, let cabs = self.dataSourceViewModel.getCabs() {
+            baseLayout.dataAvailable(cabs: cabs)//refresh current selected
+        }
     }
     
 }

@@ -18,7 +18,8 @@ class CabInfoTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func config(with cab:Cab) {
+    func config(with cab:Cab, isSelected:Bool) {
         self.cabNameLabel.text = cab.name
+        self.accessoryType = isSelected ? .checkmark : .none
     }
 }
