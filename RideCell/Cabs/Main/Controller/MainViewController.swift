@@ -10,7 +10,7 @@ import UIKit
 enum LayoutType {
     case map
     case list
-    
+
     var nextLayout:Self {
         get {
             switch self {
@@ -36,29 +36,35 @@ enum LayoutType {
 
 class MainViewController: UIViewController {
 
-    //MARK: Properties
+    ///MARK:- Properties
     var mapViewController:MapViewController?
     var listViewController:ListViewController?
     var layoutType:LayoutType = .list
     var layoutTypeButton:UIButton?
+    var dataSourceViewModel:DataSourceViewModel!
     
-    //MARK: ViewLifeCycle methos
+    ///MARK:- Outlets
+    @IBOutlet weak var overlayMessageLabel: UILabel!
+    @IBOutlet weak var overlayView: UIView!
+    
+    ///MARK:- ViewLifeCycle methos
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository())
+        self.dataSourceViewModel.delegate = self
+        self.dataSourceViewModel.fetchCabsData()
         self.addLayoutChangeNavigationButton()
-        self.displayNextLayout()
     }
     
-    //MARK: helper methos
+    ///MARK:-  helper methos
     private func showMapView() {
         if let mapLayoutVC = self.mapViewController {
             self.add(mapLayoutVC)
         }else {
             let mapVC = MapViewController.initWithStoryboard()
             self.mapViewController = mapVC
-            let viewModel = DataSourceViewModel(repository: CabRepository())
+            let viewModel = MapViewModel(dataSourceViewModel: self.dataSourceViewModel)
             mapVC.viewModel = viewModel
-            viewModel.delegate = mapVC
             self.add(mapVC)
         }
     }
@@ -82,7 +88,7 @@ class MainViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    //MARK: Actions
+    ///MARK:-  Actions
     @objc func displayNextLayout()  {
         self.children.first?.removeChildViewcontroller() //remove previously add childviewcontroller, if any
         self.layoutType = self.layoutType.nextLayout
@@ -96,3 +102,24 @@ class MainViewController: UIViewController {
     }
     
 }
+
+///MARK:- ViewModelDelegate
+extension MainViewController: DataSourceModelDelegate {
+    
+    func stateChanged(newState: DataSourceState) {
+        self.overlayView.isHidden = newState.shouldHideOverlayView
+        self.overlayMessageLabel.text = newState.overlayViewMessage
+        switch newState {
+        case .loading:
+            break
+        case .loaded(let cabs):
+            self.displayNextLayout()
+            if let baseLayout = self.children.first as? BaseLayoutViewController {
+                baseLayout.dataAvailable(cabs: cabs)
+            }
+        case .failed(let customError):
+            self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
+        }
+    }
+}
+

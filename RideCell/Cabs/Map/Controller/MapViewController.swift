@@ -8,16 +8,14 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: BaseLayoutViewController {
 
     ///MARK:- Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var reserveCarButton: UIButton!
-    @IBOutlet weak var overlayMessageLabel: UILabel!
-    @IBOutlet weak var overlayView: UIView!
     
     ///MARK:- Propterties
-    var viewModel:DataSourceViewModel!
+    var viewModel:MapViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
     
     ///MARK:- StaticMethods
@@ -31,7 +29,6 @@ class MapViewController: UIViewController {
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.fetchCabsData()
         self.mapView.delegate = self
         self.setAppearance()
     }
@@ -45,6 +42,18 @@ class MapViewController: UIViewController {
     }
     
     ///MARK:- HelperMethods
+    override func dataAvailable(cabs:[Cab]) {
+        if let cab = self.viewModel.getSelectedCab() {
+            self.addCabAnnotationOnMap(cabs: cabs)
+            self.cabInfoPageViewController.cabs = cabs
+            self.cabInfoPageViewController.selectedCabChanged(cab: cab)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                guard let self = self else { return }
+                self.selectedCabChanged(cab: cab, isInitialSelection: true)
+            }
+        }
+    }
+    
     private func setAppearance() {
         self.reserveCarButton.layer.cornerRadius = 4.0
     }
@@ -63,31 +72,6 @@ class MapViewController: UIViewController {
         }
     }
     
-}
-
-///MARK:- ViewModelDelegate
-extension MapViewController: DataSourceViewModelDelegate {
-    
-    func stateChanged(newState: DataSourceState) {
-        self.overlayView.isHidden = newState.shouldHideOverlayView
-        self.overlayMessageLabel.text = newState.overlayViewMessage
-        switch newState {
-        case .loading:
-            break
-        case .loaded(let cabs):
-            if let cab = self.viewModel.getSelectedCab() {
-                self.addCabAnnotationOnMap(cabs: cabs)
-                self.cabInfoPageViewController.cabs = cabs
-                self.cabInfoPageViewController.selectedCabChanged(cab: cab)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-                    guard let self = self else { return }
-                    self.selectedCabChanged(cab: cab, isInitialSelection: true)
-                }
-            }
-        case .failed(let customError):
-            self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
-        }
-    }
 }
 
 ///MARK:- MKMapViewDelegate

@@ -15,10 +15,38 @@
                     <view key="view" contentMode="scaleToFill" id="aRI-bd-xh3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2h-Ja-kjF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Roo-LD-zbF">
+                                        <rect key="frame" x="186" y="420.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Roo-LD-zbF" firstAttribute="centerY" secondItem="J2h-Ja-kjF" secondAttribute="centerY" id="Oht-P2-5h9"/>
+                                    <constraint firstItem="Roo-LD-zbF" firstAttribute="centerX" secondItem="J2h-Ja-kjF" secondAttribute="centerX" id="jA7-VQ-yx8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wMB-k8-7ie"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wMB-k8-7ie" firstAttribute="bottom" secondItem="J2h-Ja-kjF" secondAttribute="bottom" id="4hh-Bq-tLD"/>
+                            <constraint firstAttribute="trailing" secondItem="J2h-Ja-kjF" secondAttribute="trailing" id="DcI-Tx-wNu"/>
+                            <constraint firstItem="J2h-Ja-kjF" firstAttribute="leading" secondItem="wMB-k8-7ie" secondAttribute="leading" id="fEb-T1-dx1"/>
+                            <constraint firstItem="J2h-Ja-kjF" firstAttribute="top" secondItem="aRI-bd-xh3" secondAttribute="top" id="ljp-16-Tv6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cabs" id="rPc-7L-5Ri"/>
+                    <connections>
+                        <outlet property="overlayMessageLabel" destination="Roo-LD-zbF" id="fhs-dh-oZb"/>
+                        <outlet property="overlayView" destination="J2h-Ja-kjF" id="f8u-hd-MXF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smp-ik-CaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,22 +84,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reserve This Car"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGh-IO-rUn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL7-XI-udb">
-                                        <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="bL7-XI-udb" firstAttribute="centerX" secondItem="AGh-IO-rUn" secondAttribute="centerX" id="JK2-cG-w36"/>
-                                    <constraint firstItem="bL7-XI-udb" firstAttribute="centerY" secondItem="AGh-IO-rUn" secondAttribute="centerY" id="h4G-Aq-gkg"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,13 +93,9 @@
                             <constraint firstItem="0op-jA-kBE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9mE-BY-6ns"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AJl-h5-M8g" secondAttribute="trailing" constant="16" id="BFB-gk-hvb"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="EuW-pE-aZH"/>
-                            <constraint firstItem="AGh-IO-rUn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSQ-ff-brS"/>
-                            <constraint firstItem="AGh-IO-rUn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBf-mR-gTw"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YMp-xa-vXj"/>
                             <constraint firstItem="AJl-h5-M8g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="baU-b0-JRC"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZw-wW-2qZ"/>
-                            <constraint firstItem="AGh-IO-rUn" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="fV3-e2-VBh"/>
-                            <constraint firstItem="AGh-IO-rUn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lxT-qH-DoP"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m6j-lc-6qK"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="bottom" secondItem="0op-jA-kBE" secondAttribute="top" id="tXX-ZT-WZg"/>
                         </constraints>
@@ -95,8 +103,6 @@
                     <navigationItem key="navigationItem" title="Cabs" id="jcG-7h-j1P"/>
                     <connections>
                         <outlet property="mapView" destination="Nus-Tc-Zxz" id="ZK6-i0-44c"/>
-                        <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
-                        <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
                         <outlet property="reserveCarButton" destination="AJl-h5-M8g" id="wMs-nx-1v2"/>
                     </connections>
                 </viewController>

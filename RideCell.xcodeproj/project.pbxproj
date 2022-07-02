@@ -33,6 +33,8 @@
 		81E5806E28400F2D000BC152 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81E5807028400F2D000BC152 /* Localizable.strings */; };
 		81FD31202870A55600A257F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD311F2870A55600A257F1 /* MainViewController.swift */; };
 		81FD31222870A5F000A257F1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31212870A5F000A257F1 /* ListViewController.swift */; };
+		81FD31292870BA9200A257F1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31282870BA9200A257F1 /* MapViewModel.swift */; };
+		81FD312B2870C2A300A257F1 /* BaseLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		81E5806F28400F2D000BC152 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		81FD311F2870A55600A257F1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		81FD31212870A5F000A257F1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		81FD31282870BA9200A257F1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 		81E5804E283FE553000BC152 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				81FD31282870BA9200A257F1 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				81FD311F2870A55600A257F1 /* MainViewController.swift */,
+				81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -432,11 +438,13 @@
 				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
 				8103C4D52841EFE5005B4DD4 /* main.swift in Sources */,
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
+				81FD312B2870C2A300A257F1 /* BaseLayoutViewController.swift in Sources */,
 				81E5806828400647000BC152 /* CabPin.swift in Sources */,
 				81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */,
 				81FD31202870A55600A257F1 /* MainViewController.swift in Sources */,
 				81991B112840A28800EA77DE /* CabPointAnnotation.swift in Sources */,
 				81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */,
+				81FD31292870BA9200A257F1 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

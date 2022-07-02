@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: BaseLayoutViewController {
 
     ///MARK:- StaticMethods
     class func initWithStoryboard() -> ListViewController {
@@ -22,4 +22,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func dataAvailable(cabs: [Cab]) {
+        
+    }
 }
