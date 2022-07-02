@@ -1,5 +1,5 @@
 //
-//  MapViewModel.swift
+//  DataSourceViewModel.swift
 //  RideCell
 //
 //  Created by sheshnath  on 26/05/22.
@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-enum MapState {
+enum DataSourceState {
     case loading
     case loaded([Cab])
     case failed(CustomError)
@@ -41,8 +41,8 @@ enum MapState {
     
 }
 
-protocol MapViewModelDelegate: AnyObject {
-    func stateChanged(newState:MapState)
+protocol DataSourceViewModelDelegate: AnyObject {
+    func stateChanged(newState:DataSourceState)
 }
 
 protocol CabSelectionChangeDelegate: AnyObject {
@@ -50,12 +50,12 @@ protocol CabSelectionChangeDelegate: AnyObject {
 }
 
 
-class MapViewModel {
+class DataSourceViewModel {
 
     ///MARK:- Proporties
-    weak var delegate:MapViewModelDelegate?
+    weak var delegate:DataSourceViewModelDelegate?
     private var repository:CabRepositoryProtocol!
-    private var state:MapState = .loading
+    private var state:DataSourceState = .loading
     private var selectedCab:Cab!
     
     init(repository:CabRepositoryProtocol) {

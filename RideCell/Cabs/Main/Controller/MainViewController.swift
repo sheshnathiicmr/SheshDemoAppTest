@@ -26,7 +26,7 @@ enum LayoutType {
         get {
             switch self {
             case .map:
-                return "ListView"
+                return "ListView" //next step(layout) icon
             case .list:
                 return "MapView"
             }
@@ -51,18 +51,26 @@ class MainViewController: UIViewController {
     
     //MARK: helper methos
     private func showMapView() {
-        let mapVC = MapViewController.initWithStoryboard()
-        self.mapViewController = mapVC
-        let viewModel = MapViewModel(repository: CabRepository())
-        mapVC.viewModel = viewModel
-        viewModel.delegate = mapVC
-        self.add(mapVC)
+        if let mapLayoutVC = self.mapViewController {
+            self.add(mapLayoutVC)
+        }else {
+            let mapVC = MapViewController.initWithStoryboard()
+            self.mapViewController = mapVC
+            let viewModel = DataSourceViewModel(repository: CabRepository())
+            mapVC.viewModel = viewModel
+            viewModel.delegate = mapVC
+            self.add(mapVC)
+        }
     }
     
     private func showListView() {
-        let listVC = ListViewController.initWithStoryboard()
-        self.listViewController = listVC
-        self.add(listVC)
+        if let listLayoutVC = self.listViewController {
+            self.add(listLayoutVC)
+        }else {
+            let listVC = ListViewController.initWithStoryboard()
+            self.listViewController = listVC
+            self.add(listVC)
+        }
     }
     
     private func addLayoutChangeNavigationButton() {
@@ -76,6 +84,7 @@ class MainViewController: UIViewController {
     
     //MARK: Actions
     @objc func displayNextLayout()  {
+        self.children.first?.removeChildViewcontroller() //remove previously add childviewcontroller, if any
         self.layoutType = self.layoutType.nextLayout
         switch self.layoutType {
         case .list:

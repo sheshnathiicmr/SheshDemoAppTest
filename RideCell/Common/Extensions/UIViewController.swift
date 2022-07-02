@@ -17,7 +17,7 @@ extension UIViewController {
     }
 
     /// It removes the child view controller from the parent.
-    func remove() {
+    func removeChildViewcontroller() {
         guard let _ = parent else {return }
         willMove(toParent: nil)
         removeFromParent()

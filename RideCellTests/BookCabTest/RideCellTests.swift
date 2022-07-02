@@ -11,7 +11,7 @@ import XCTest
 class RideCellTests: XCTestCase {
 
     var mapViewController:MapViewController!
-    var mapViewModel:MapViewModel!
+    var mapViewModel:DataSourceViewModel!
     var mockRepository:MockRepository!
     
     override func setUpWithError() throws {
@@ -20,7 +20,7 @@ class RideCellTests: XCTestCase {
         self.mapViewController = MapViewController.initWithStoryboard()
         
         self.mockRepository = MockRepository()
-        self.mapViewModel = MapViewModel(repository: self.mockRepository)
+        self.mapViewModel = DataSourceViewModel(repository: self.mockRepository)
         self.mapViewController.viewModel = self.mapViewModel
         
     }

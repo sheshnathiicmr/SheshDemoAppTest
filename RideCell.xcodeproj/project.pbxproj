@@ -23,7 +23,7 @@
 		81E58040283FE4DF000BC152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E5803E283FE4DF000BC152 /* Main.storyboard */; };
 		81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E58041283FE4E0000BC152 /* Assets.xcassets */; };
 		81E58045283FE4E0000BC152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E58043283FE4E0000BC152 /* LaunchScreen.storyboard */; };
-		81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805A283FE864000BC152 /* MapViewModel.swift */; };
+		81E5805B283FE864000BC152 /* DataSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805A283FE864000BC152 /* DataSourceViewModel.swift */; };
 		81E5805E283FE9BA000BC152 /* Cab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805D283FE9BA000BC152 /* Cab.swift */; };
 		81E58061283FEE82000BC152 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58060283FEE82000BC152 /* CustomError.swift */; };
 		81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58062283FF5C3000BC152 /* UIViewController.swift */; };
@@ -65,7 +65,7 @@
 		81E58041283FE4E0000BC152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E58044283FE4E0000BC152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E58046283FE4E0000BC152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81E5805A283FE864000BC152 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		81E5805A283FE864000BC152 /* DataSourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceViewModel.swift; sourceTree = "<group>"; };
 		81E5805D283FE9BA000BC152 /* Cab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cab.swift; sourceTree = "<group>"; };
 		81E58060283FEE82000BC152 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		81E58062283FF5C3000BC152 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		81E5804D283FE549000BC152 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				81991B102840A28800EA77DE /* CabPointAnnotation.swift */,
 				81E5806728400647000BC152 /* CabPin.swift */,
 			);
 			path = View;
@@ -172,7 +173,6 @@
 		81E5804E283FE553000BC152 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				81E5805A283FE864000BC152 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -180,10 +180,7 @@
 		81E5804F283FE55C000BC152 /* Cabs */ = {
 			isa = PBXGroup;
 			children = (
-				81E5803E283FE4DF000BC152 /* Main.storyboard */,
-				81E5805C283FE8B0000BC152 /* Model */,
-				81E58066283FF8ED000BC152 /* Repository */,
-				81FD311F2870A55600A257F1 /* MainViewController.swift */,
+				81FD31252870B87F00A257F1 /* Main */,
 				81FD311E2870A52A00A257F1 /* List */,
 				81FD311D2870A51300A257F1 /* Map */,
 			);
@@ -216,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				81E5805D283FE9BA000BC152 /* Cab.swift */,
-				81991B102840A28800EA77DE /* CabPointAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +274,34 @@
 				81E5803C283FE4DF000BC152 /* MapViewController.swift */,
 				81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */,
 				81991B0C28409BF100EA77DE /* CabInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81FD31252870B87F00A257F1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				81FD31272870B8AB00A257F1 /* Controller */,
+				81FD31262870B89F00A257F1 /* ViewModel */,
+				81E58066283FF8ED000BC152 /* Repository */,
+				81E5805C283FE8B0000BC152 /* Model */,
+				81E5803E283FE4DF000BC152 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		81FD31262870B89F00A257F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				81E5805A283FE864000BC152 /* DataSourceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		81FD31272870B8AB00A257F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81FD311F2870A55600A257F1 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -403,7 +427,7 @@
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
 				81E5806A28400EB3000BC152 /* String.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,
-				81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */,
+				81E5805B283FE864000BC152 /* DataSourceViewModel.swift in Sources */,
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,
 				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
 				8103C4D52841EFE5005B4DD4 /* main.swift in Sources */,

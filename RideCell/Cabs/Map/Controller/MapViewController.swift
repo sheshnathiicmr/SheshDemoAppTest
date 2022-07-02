@@ -17,7 +17,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var overlayView: UIView!
     
     ///MARK:- Propterties
-    var viewModel:MapViewModel!
+    var viewModel:DataSourceViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
     
     ///MARK:- StaticMethods
@@ -66,9 +66,9 @@ class MapViewController: UIViewController {
 }
 
 ///MARK:- ViewModelDelegate
-extension MapViewController: MapViewModelDelegate {
+extension MapViewController: DataSourceViewModelDelegate {
     
-    func stateChanged(newState: MapState) {
+    func stateChanged(newState: DataSourceState) {
         self.overlayView.isHidden = newState.shouldHideOverlayView
         self.overlayMessageLabel.text = newState.overlayViewMessage
         switch newState {

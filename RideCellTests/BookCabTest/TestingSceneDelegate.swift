@@ -21,7 +21,7 @@ class TestingSceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         let mapViewController = MapViewController.initWithStoryboard()
-        let viewModel = MapViewModel(repository: MockRepository())
+        let viewModel = DataSourceViewModel(repository: MockRepository())
         mapViewController.viewModel = viewModel
         viewModel.delegate = mapViewController
         window = UIWindow(windowScene: windowScene)
