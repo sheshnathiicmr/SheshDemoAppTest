@@ -19,6 +19,19 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-Tc-Zxz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQn-eJ-n3T">
+                                <rect key="frame" x="334" y="76" width="64" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="0.9029646109271523" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="601-fo-n9n"/>
+                                    <constraint firstAttribute="width" secondItem="CQn-eJ-n3T" secondAttribute="height" multiplier="1:1" id="JzI-Ne-Ylr"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ListView"/>
+                                <connections>
+                                    <action selector="toggleListViewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqq-vO-Tn3"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0op-jA-kBE">
                                 <rect key="frame" x="0.0" y="646" width="414" height="250"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,6 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQn-eJ-n3T" secondAttribute="trailing" constant="16" id="3af-GY-TBX"/>
                             <constraint firstAttribute="bottom" secondItem="AJl-h5-M8g" secondAttribute="bottom" constant="24" id="5oK-r5-th9"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6zB-OH-qgb"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9mE-BY-6ns"/>
@@ -73,6 +87,7 @@
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZw-wW-2qZ"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="fV3-e2-VBh"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lxT-qH-DoP"/>
+                            <constraint firstItem="CQn-eJ-n3T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="sHJ-3l-q47"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="bottom" secondItem="0op-jA-kBE" secondAttribute="top" id="tXX-ZT-WZg"/>
                         </constraints>
                     </view>
@@ -81,6 +96,7 @@
                         <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
                         <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
                         <outlet property="reserveCarButton" destination="AJl-h5-M8g" id="wMs-nx-1v2"/>
+                        <outlet property="toggleListViewButton" destination="CQn-eJ-n3T" id="HVd-pA-sRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -202,6 +218,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ListView" width="25" height="25"/>
         <image name="car.circle" catalog="system" width="128" height="121"/>
         <image name="parkingsign.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
