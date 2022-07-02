@@ -49,8 +49,8 @@ class DataSourceViewModel {
 
     ///MARK:- Proporties
     weak var delegate:DataSourceModelDelegate?
+    var state:DataSourceState = .loading
     private var repository:CabRepositoryProtocol!
-    private var state:DataSourceState = .loading
     private var selectedCab:Cab!
     
     init(repository:CabRepositoryProtocol) {

@@ -35,6 +35,8 @@
 		81FD31222870A5F000A257F1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31212870A5F000A257F1 /* ListViewController.swift */; };
 		81FD31292870BA9200A257F1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31282870BA9200A257F1 /* MapViewModel.swift */; };
 		81FD312B2870C2A300A257F1 /* BaseLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */; };
+		81FD312E2870C54100A257F1 /* CabInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD312D2870C54100A257F1 /* CabInfoTableViewCell.swift */; };
+		81FD31312870C5F600A257F1 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31302870C5F600A257F1 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		81FD31212870A5F000A257F1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		81FD31282870BA9200A257F1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayoutViewController.swift; sourceTree = "<group>"; };
+		81FD312D2870C54100A257F1 /* CabInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoTableViewCell.swift; sourceTree = "<group>"; };
+		81FD31302870C5F600A257F1 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,8 @@
 		81FD311E2870A52A00A257F1 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				81FD312F2870C5D500A257F1 /* ViewModel */,
+				81FD312C2870C51F00A257F1 /* View */,
 				81FD31232870B29000A257F1 /* Controller */,
 			);
 			path = List;
@@ -310,6 +316,22 @@
 				81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		81FD312C2870C51F00A257F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81FD312D2870C54100A257F1 /* CabInfoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81FD312F2870C5D500A257F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				81FD31302870C5F600A257F1 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,10 +450,12 @@
 			files = (
 				81FD31222870A5F000A257F1 /* ListViewController.swift in Sources */,
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
+				81FD31312870C5F600A257F1 /* ListViewModel.swift in Sources */,
 				81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */,
 				81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
 				81E5806A28400EB3000BC152 /* String.swift in Sources */,
+				81FD312E2870C54100A257F1 /* CabInfoTableViewCell.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,
 				81E5805B283FE864000BC152 /* DataSourceViewModel.swift in Sources */,
 				81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */,

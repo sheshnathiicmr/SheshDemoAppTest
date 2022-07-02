@@ -74,6 +74,8 @@ class MainViewController: UIViewController {
             self.add(listLayoutVC)
         }else {
             let listVC = ListViewController.initWithStoryboard()
+            let viewModel = ListViewModel(dataSourceViewModel: self.dataSourceViewModel)
+            listVC.viewModel = viewModel
             self.listViewController = listVC
             self.add(listVC)
         }
