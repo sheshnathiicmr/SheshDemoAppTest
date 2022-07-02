@@ -21,6 +21,17 @@ enum LayoutType {
             }
         }
     }
+    
+    var layoutButtonIcon:String {
+        get {
+            switch self {
+            case .map:
+                return "ListView"
+            case .list:
+                return "MapView"
+            }
+        }
+    }
 }
 
 class MainViewController: UIViewController {
@@ -29,6 +40,7 @@ class MainViewController: UIViewController {
     var mapViewController:MapViewController?
     var listViewController:ListViewController?
     var layoutType:LayoutType = .list
+    var layoutTypeButton:UIButton?
     
     //MARK: ViewLifeCycle methos
     override func viewDidLoad() {
@@ -55,7 +67,7 @@ class MainViewController: UIViewController {
     
     private func addLayoutChangeNavigationButton() {
         let button = UIButton.init(type: .custom)
-        button.setImage(UIImage(named: "ListView"), for: .normal)
+        self.layoutTypeButton = button
         button.addTarget(self, action: #selector(displayNextLayout), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 53, height: 51)
         let barButton = UIBarButtonItem(customView: button)
@@ -71,6 +83,7 @@ class MainViewController: UIViewController {
         case .map:
             self.showMapView()
         }
+        self.layoutTypeButton?.setImage(UIImage(named: self.layoutType.layoutButtonIcon), for: .normal)
     }
     
 }

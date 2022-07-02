@@ -153,26 +153,12 @@
 			isa = PBXGroup;
 			children = (
 				81E58050283FE564000BC152 /* Common */,
-				81E5804C283FE539000BC152 /* BookCab */,
+				81E5804F283FE55C000BC152 /* Cabs */,
 				81E58041283FE4E0000BC152 /* Assets.xcassets */,
 				81E58043283FE4E0000BC152 /* LaunchScreen.storyboard */,
 				81E58046283FE4E0000BC152 /* Info.plist */,
 			);
 			path = RideCell;
-			sourceTree = "<group>";
-		};
-		81E5804C283FE539000BC152 /* BookCab */ = {
-			isa = PBXGroup;
-			children = (
-				81E5803E283FE4DF000BC152 /* Main.storyboard */,
-				81E58066283FF8ED000BC152 /* Repository */,
-				81E5805F283FEE30000BC152 /* HelperClasses */,
-				81E5805C283FE8B0000BC152 /* Model */,
-				81E5804F283FE55C000BC152 /* Controller */,
-				81E5804E283FE553000BC152 /* ViewModel */,
-				81E5804D283FE549000BC152 /* View */,
-			);
-			path = BookCab;
 			sourceTree = "<group>";
 		};
 		81E5804D283FE549000BC152 /* View */ = {
@@ -191,19 +177,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		81E5804F283FE55C000BC152 /* Controller */ = {
+		81E5804F283FE55C000BC152 /* Cabs */ = {
 			isa = PBXGroup;
 			children = (
+				81E5803E283FE4DF000BC152 /* Main.storyboard */,
+				81E5805C283FE8B0000BC152 /* Model */,
+				81E58066283FF8ED000BC152 /* Repository */,
 				81FD311F2870A55600A257F1 /* MainViewController.swift */,
-				81FD311E2870A52A00A257F1 /* ListView */,
-				81FD311D2870A51300A257F1 /* MapView */,
+				81FD311E2870A52A00A257F1 /* List */,
+				81FD311D2870A51300A257F1 /* Map */,
 			);
-			path = Controller;
+			path = Cabs;
 			sourceTree = "<group>";
 		};
 		81E58050283FE564000BC152 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				81E5805F283FEE30000BC152 /* HelperClasses */,
 				81E5806B28400EE4000BC152 /* Localized */,
 				81E58059283FE80B000BC152 /* Extensions */,
 				81E58038283FE4DF000BC152 /* AppDelegate.swift */,
@@ -256,22 +246,40 @@
 			path = Localized;
 			sourceTree = "<group>";
 		};
-		81FD311D2870A51300A257F1 /* MapView */ = {
+		81FD311D2870A51300A257F1 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				81E5804D283FE549000BC152 /* View */,
+				81E5804E283FE553000BC152 /* ViewModel */,
+				81FD31242870B2A800A257F1 /* Controller */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		81FD311E2870A52A00A257F1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				81FD31232870B29000A257F1 /* Controller */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		81FD31232870B29000A257F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81FD31212870A5F000A257F1 /* ListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81FD31242870B2A800A257F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				81E5803C283FE4DF000BC152 /* MapViewController.swift */,
 				81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */,
 				81991B0C28409BF100EA77DE /* CabInfoViewController.swift */,
 			);
-			path = MapView;
-			sourceTree = "<group>";
-		};
-		81FD311E2870A52A00A257F1 /* ListView */ = {
-			isa = PBXGroup;
-			children = (
-				81FD31212870A5F000A257F1 /* ListViewController.swift */,
-			);
-			path = ListView;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
