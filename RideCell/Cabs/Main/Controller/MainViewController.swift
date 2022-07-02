@@ -36,18 +36,18 @@ enum LayoutType {
 
 class MainViewController: UIViewController {
 
-    ///MARK:- Properties
+    //MARK: - Properties
     var mapViewController:MapViewController?
     var listViewController:ListViewController?
     var layoutType:LayoutType = .list
     var layoutTypeButton:UIButton?
     var dataSourceViewModel:DataSourceViewModel!
     
-    ///MARK:- Outlets
+    //MARK: - Outlets
     @IBOutlet weak var overlayMessageLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
     
-    ///MARK:- ViewLifeCycle methos
+    //MARK: - ViewLifeCycle methos
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository())
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
         self.addLayoutChangeNavigationButton()
     }
     
-    ///MARK:-  helper methos
+    //MARK: -  helper methos
     private func showMapView() {
         if let mapLayoutVC = self.mapViewController {
             self.add(mapLayoutVC)
@@ -90,7 +90,7 @@ class MainViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    ///MARK:-  Actions
+    //MARK: -  Actions
     @objc func displayNextLayout()  {
         self.children.first?.removeChildViewcontroller() //remove previously add childviewcontroller, if any
         self.layoutType = self.layoutType.nextLayout
@@ -105,7 +105,7 @@ class MainViewController: UIViewController {
     
 }
 
-///MARK:- ViewModelDelegate
+//MARK: - ViewModelDelegate
 extension MainViewController: DataSourceModelDelegate {
     
     func stateChanged(newState: DataSourceState) {

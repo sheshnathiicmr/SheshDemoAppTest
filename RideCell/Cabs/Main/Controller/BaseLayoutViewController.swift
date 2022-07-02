@@ -9,12 +9,12 @@ import UIKit
 
 class BaseLayoutViewController: UIViewController {
 
-    ///MARK:- ViewLifeCycle methods
+    //MARK: - ViewLifeCycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    ///MARK:- State update in respective layout i.e map & list override
+    //MARK: - State update in respective layout i.e map & list override
     func dataAvailable(cabs:[Cab]) {
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class CabInfoTableViewCell: UITableViewCell {
 
-    ///MARK:- Outlets
+    //MARK: - Outlets
     @IBOutlet weak var cabImageView: UIImageView!
     @IBOutlet weak var cabNameLabel: UILabel!
 
@@ -18,4 +18,7 @@ class CabInfoTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    func config(with cab:Cab) {
+        self.cabNameLabel.text = cab.name
+    }
 }

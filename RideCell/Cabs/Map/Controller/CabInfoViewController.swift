@@ -39,7 +39,7 @@ class CabInfoViewController: UIViewController {
         self.licensePlateNumberLabel.text = self.cab.licensePlate
         self.seatsCountLabel.text = self.cab.series
         self.nonRunningCostLabel.text = self.cab.innerCleanliness
-        self.cabTypeLabel.text = cab.make
+        self.cabTypeLabel.text = cab.name
         self.setBackgroundImage()
     }
     

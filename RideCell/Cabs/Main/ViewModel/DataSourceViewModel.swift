@@ -47,7 +47,7 @@ protocol DataSourceModelDelegate: AnyObject {
 
 class DataSourceViewModel {
 
-    ///MARK:- Proporties
+    //MARK: - Proporties
     weak var delegate:DataSourceModelDelegate?
     var state:DataSourceState = .loading
     private var repository:CabRepositoryProtocol!
@@ -57,7 +57,7 @@ class DataSourceViewModel {
         self.repository = repository
     }
     
-    ///MARK:- Methods
+    //MARK: - Methods
     func fetchCabsData() {
         self.delegate?.stateChanged(newState: self.state) //set initial state
         self.repository.fetchCabs { result in

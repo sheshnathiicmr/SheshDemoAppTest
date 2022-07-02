@@ -10,15 +10,15 @@ import MapKit
 
 class MapViewController: BaseLayoutViewController {
 
-    ///MARK:- Outlets
+    //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var reserveCarButton: UIButton!
     
-    ///MARK:- Propterties
+    //MARK: - Propterties
     var viewModel:MapViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
     
-    ///MARK:- StaticMethods
+    //MARK: - StaticMethods
     class func initWithStoryboard() -> MapViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
@@ -26,14 +26,14 @@ class MapViewController: BaseLayoutViewController {
         return mapViewController
     }
     
-    ///MARK:- ViewLifeCycle
+    //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         self.setAppearance()
     }
     
-    ///MARK:- Navigation
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cabInfoPageVC = segue.destination as? CabInfoPageViewController {
             self.cabInfoPageViewController = cabInfoPageVC
@@ -41,7 +41,7 @@ class MapViewController: BaseLayoutViewController {
         }
     }
     
-    ///MARK:- HelperMethods
+    //MARK: - HelperMethods
     override func dataAvailable(cabs:[Cab]) {
         if let cab = self.viewModel.getSelectedCab() {
             self.addCabAnnotationOnMap(cabs: cabs)
@@ -74,7 +74,7 @@ class MapViewController: BaseLayoutViewController {
     
 }
 
-///MARK:- MKMapViewDelegate
+//MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -102,7 +102,7 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
-///MARK:- selection change from page swipe
+//MARK: - selection change from page swipe
 extension MapViewController: CabSelectionChangeDelegate {
     
     func selectedCabChanged(cab: Cab, isInitialSelection:Bool) {

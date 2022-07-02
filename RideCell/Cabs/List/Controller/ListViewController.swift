@@ -9,13 +9,13 @@ import UIKit
 
 class ListViewController: BaseLayoutViewController {
 
-    ///MARK:- Propterties
+    //MARK: - Propterties
     var viewModel:ListViewModel!
     
-    ///MARK:- Outlets
+    //MARK: - Outlets
     @IBOutlet weak var cabsTableView: UITableView!
     
-    ///MARK:- StaticMethods
+    //MARK: - StaticMethods
     class func initWithStoryboard() -> ListViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
@@ -28,12 +28,14 @@ class ListViewController: BaseLayoutViewController {
         super.viewDidLoad()
     }
     
+    // MARK: - state update method
     override func dataAvailable(cabs: [Cab]) {
         self.cabsTableView.reloadData()
     }
     
 }
 
+// MARK: - UITableViewDataSource
 extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +44,9 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CabInfoTableViewCell") as! CabInfoTableViewCell
+        if let cab = self.viewModel.object(at: indexPath) {
+            cell.config(with: cab)
+        }
         return cell
     }
 }

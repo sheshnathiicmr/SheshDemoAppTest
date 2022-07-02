@@ -41,7 +41,7 @@ class MapViewModel {
         let cabAnnotation = CabPointAnnotation(cab: cab)
         cabAnnotation.coordinate = location
         cabAnnotation.title = cab.licensePlate
-        cabAnnotation.subtitle = cab.make
+        cabAnnotation.subtitle = cab.name
         return cabAnnotation
     }
     
