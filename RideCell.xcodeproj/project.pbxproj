@@ -37,6 +37,7 @@
 		81FD312B2870C2A300A257F1 /* BaseLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */; };
 		81FD312E2870C54100A257F1 /* CabInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD312D2870C54100A257F1 /* CabInfoTableViewCell.swift */; };
 		81FD31312870C5F600A257F1 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31302870C5F600A257F1 /* ListViewModel.swift */; };
+		81FD31332870CEDA00A257F1 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FD31322870CEDA00A257F1 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		81FD312A2870C2A300A257F1 /* BaseLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLayoutViewController.swift; sourceTree = "<group>"; };
 		81FD312D2870C54100A257F1 /* CabInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoTableViewCell.swift; sourceTree = "<group>"; };
 		81FD31302870C5F600A257F1 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		81FD31322870CEDA00A257F1 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			children = (
 				81E58062283FF5C3000BC152 /* UIViewController.swift */,
 				81E5806928400EB3000BC152 /* String.swift */,
+				81FD31322870CEDA00A257F1 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */,
 				81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
+				81FD31332870CEDA00A257F1 /* UIImageView.swift in Sources */,
 				81E5806A28400EB3000BC152 /* String.swift in Sources */,
 				81FD312E2870C54100A257F1 /* CabInfoTableViewCell.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,

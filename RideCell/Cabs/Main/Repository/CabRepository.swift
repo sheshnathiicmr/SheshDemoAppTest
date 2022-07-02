@@ -17,7 +17,6 @@ class CabRepository: CabRepositoryProtocol {
         ApiRequestManager.shared.getCabsInfo { result in
             switch result {
             case .success(let response):
-                print("response: \(response)")
                 if let cabsJSON = response as? [[String:AnyObject]] {
                     var cabs = [Cab]()
                     for cabJSON in cabsJSON {

@@ -28,5 +28,4 @@ class ApiRequestManager {
         task.resume()
     }
     
-    
 }
