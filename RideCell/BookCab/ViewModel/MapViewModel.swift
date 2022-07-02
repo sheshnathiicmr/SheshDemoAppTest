@@ -41,11 +41,11 @@ enum MapState {
     
 }
 
-protocol MapViewModelDelegate {
+protocol MapViewModelDelegate: AnyObject {
     func stateChanged(newState:MapState)
 }
 
-protocol CabSelectionChangeDelegate {
+protocol CabSelectionChangeDelegate: AnyObject {
     func selectedCabChanged(cab:Cab, isInitialSelection:Bool)
 }
 
@@ -53,7 +53,7 @@ protocol CabSelectionChangeDelegate {
 class MapViewModel {
 
     ///MARK:- Proporties
-    var delegate:MapViewModelDelegate?
+    weak var delegate:MapViewModelDelegate?
     private var repository:CabRepositoryProtocol!
     private var state:MapState = .loading
     private var selectedCab:Cab!

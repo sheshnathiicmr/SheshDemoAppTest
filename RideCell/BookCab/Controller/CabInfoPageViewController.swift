@@ -17,7 +17,7 @@ class CabInfoPageViewController: UIPageViewController {
         }
     }
     var cabs:[Cab]!
-    var cabInfoPageDelegate:CabSelectionChangeDelegate?
+    weak var cabInfoPageDelegate:CabSelectionChangeDelegate?
     
     ///MARK:- ViewLifeCycle
     override func viewDidLoad() {
