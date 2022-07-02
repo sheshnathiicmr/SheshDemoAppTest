@@ -10,7 +10,6 @@
 		8103C4D52841EFE5005B4DD4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D42841EFE5005B4DD4 /* main.swift */; };
 		8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */; };
 		8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */; };
-		81292371287060D900A95607 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81292370287060D900A95607 /* UIButton.swift */; };
 		8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195BFF7284138F80049B1EF /* RideCellTests.swift */; };
 		8195C000284139B10049B1EF /* test_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 8195BFFF284139B10049B1EF /* test_sample.json */; };
 		8195C003284139FD0049B1EF /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195C002284139FD0049B1EF /* MockRepository.swift */; };
@@ -48,7 +47,6 @@
 		8103C4D42841EFE5005B4DD4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
-		81292370287060D900A95607 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		8195BFF5284138F80049B1EF /* RideCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195BFF7284138F80049B1EF /* RideCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCellTests.swift; sourceTree = "<group>"; };
 		8195BFFF284139B10049B1EF /* test_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_sample.json; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 			children = (
 				81E58062283FF5C3000BC152 /* UIViewController.swift */,
 				81E5806928400EB3000BC152 /* String.swift */,
-				81292370287060D900A95607 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,7 +369,6 @@
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
 				81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */,
 				81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */,
-				81292371287060D900A95607 /* UIButton.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
 				81E5806A28400EB3000BC152 /* String.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,

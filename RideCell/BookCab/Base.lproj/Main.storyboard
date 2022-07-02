@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cqn-ZP-fSJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Cabs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,21 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-Tc-Zxz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="646"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="558"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQn-eJ-n3T">
-                                <rect key="frame" x="334" y="76" width="64" height="64"/>
-                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="0.9029646109271523" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="601-fo-n9n"/>
-                                    <constraint firstAttribute="width" secondItem="CQn-eJ-n3T" secondAttribute="height" multiplier="1:1" id="JzI-Ne-Ylr"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="ListView"/>
-                                <connections>
-                                    <action selector="toggleListViewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqq-vO-Tn3"/>
-                                </connections>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0op-jA-kBE">
                                 <rect key="frame" x="0.0" y="646" width="414" height="250"/>
                                 <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,7 +60,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQn-eJ-n3T" secondAttribute="trailing" constant="16" id="3af-GY-TBX"/>
                             <constraint firstAttribute="bottom" secondItem="AJl-h5-M8g" secondAttribute="bottom" constant="24" id="5oK-r5-th9"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6zB-OH-qgb"/>
                             <constraint firstItem="0op-jA-kBE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9mE-BY-6ns"/>
@@ -82,26 +68,25 @@
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QSQ-ff-brS"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WBf-mR-gTw"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YMp-xa-vXj"/>
-                            <constraint firstItem="Nus-Tc-Zxz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YZJ-8d-W4E"/>
                             <constraint firstItem="AJl-h5-M8g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="baU-b0-JRC"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cZw-wW-2qZ"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="fV3-e2-VBh"/>
                             <constraint firstItem="AGh-IO-rUn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lxT-qH-DoP"/>
-                            <constraint firstItem="CQn-eJ-n3T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="sHJ-3l-q47"/>
+                            <constraint firstItem="Nus-Tc-Zxz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m6j-lc-6qK"/>
                             <constraint firstItem="Nus-Tc-Zxz" firstAttribute="bottom" secondItem="0op-jA-kBE" secondAttribute="top" id="tXX-ZT-WZg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Cabs" id="jcG-7h-j1P"/>
                     <connections>
                         <outlet property="mapView" destination="Nus-Tc-Zxz" id="ZK6-i0-44c"/>
                         <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
                         <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
                         <outlet property="reserveCarButton" destination="AJl-h5-M8g" id="wMs-nx-1v2"/>
-                        <outlet property="toggleListViewButton" destination="CQn-eJ-n3T" id="HVd-pA-sRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.04347826086958" y="83.705357142857139"/>
+            <point key="canvasLocation" x="1023.1884057971015" y="83.705357142857139"/>
         </scene>
         <!--Cab Info Page View Controller-->
         <scene sceneID="goM-s1-JBs">
@@ -111,7 +96,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9q-bJ-v8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="92"/>
+            <point key="canvasLocation" x="1860.8695652173915" y="91.741071428571431"/>
         </scene>
         <!--Cab Info View Controller-->
         <scene sceneID="0ni-bw-od9">
@@ -214,11 +199,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-bP-n8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.7681159420292" y="83.705357142857139"/>
+            <point key="canvasLocation" x="2573.913043478261" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1rV-qG-iHU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cqn-ZP-fSJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MT2-hV-ZTB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PJQ-xl-L6M"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpH-kr-ufa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ListView" width="25" height="25"/>
         <image name="car.circle" catalog="system" width="128" height="121"/>
         <image name="parkingsign.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>

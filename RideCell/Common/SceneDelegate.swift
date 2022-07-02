@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
-        if let mapViewController = self.window?.rootViewController as? MapViewController {
+        if let navigationController = self.window?.rootViewController as? UINavigationController, let mapViewController = navigationController.viewControllers.first as? MapViewController {
             let viewModel = MapViewModel(repository: CabRepository())
             mapViewController.viewModel = viewModel
             viewModel.delegate = mapViewController

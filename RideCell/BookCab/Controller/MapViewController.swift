@@ -16,7 +16,6 @@ class MapViewController: UIViewController {
     @IBOutlet weak var overlayMessageLabel: UILabel!
     @IBOutlet weak var overlayView: UIView!
     
-    @IBOutlet weak var toggleListViewButton: UIButton!
     ///MARK:- Propterties
     var viewModel:MapViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
@@ -45,15 +44,20 @@ class MapViewController: UIViewController {
         }
     }
     
-    ///MARK:- Actions
-    @IBAction func toggleListViewTapped(_ sender: Any) {
-        print("toogle layout")
-    }
     
     ///MARK:- HelperMethods
     private func setAppearance() {
         self.reserveCarButton.layer.cornerRadius = 4.0
-        self.toggleListViewButton.makeRoundedButton()
+        self.addLayoutChangeNavigationButton()
+    }
+    
+    private func addLayoutChangeNavigationButton() {
+        let saveButton = UIBarButtonItem(title: "Save".localized, style: .plain, target: self, action: #selector(layoutChangeTapped))
+        self.navigationItem.rightBarButtonItem = saveButton
+    }
+    
+    @objc func layoutChangeTapped()  {
+        
     }
     
     private func zoomToCabLocation(cab:Cab) {
