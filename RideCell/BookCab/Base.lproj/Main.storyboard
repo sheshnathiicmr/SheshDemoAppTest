@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cqn-ZP-fSJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v4b-79-KaK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,6 +9,22 @@
     </dependencies>
     <scenes>
         <!--Cabs-->
+        <scene sceneID="gG7-k6-Y7V">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="tqU-z2-jQH" customClass="MainViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRI-bd-xh3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wMB-k8-7ie"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cabs" id="rPc-7L-5Ri"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smp-ik-CaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="445"/>
+        </scene>
+        <!--Cabs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-Tc-Zxz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="558"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="602"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0op-jA-kBE">
                                 <rect key="frame" x="0.0" y="646" width="414" height="250"/>
@@ -82,28 +98,27 @@
                         <outlet property="overlayMessageLabel" destination="bL7-XI-udb" id="W7r-qY-dQl"/>
                         <outlet property="overlayView" destination="AGh-IO-rUn" id="Rae-5w-1G6"/>
                         <outlet property="reserveCarButton" destination="AJl-h5-M8g" id="wMs-nx-1v2"/>
-                        <segue destination="PNS-db-IWb" kind="show" identifier="cabListSegue" id="hDS-iQ-CXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023.1884057971015" y="83.705357142857139"/>
+            <point key="canvasLocation" x="1933.3333333333335" y="83.705357142857139"/>
         </scene>
         <!--Cabs-->
         <scene sceneID="mtn-Zt-fqS">
             <objects>
-                <viewController id="PNS-db-IWb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" id="PNS-db-IWb" customClass="ListViewController" customModule="RideCell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WrJ-w1-Ycp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="On9-1c-ZYU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cabs" id="i5E-co-4rS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aG1-Md-2Dz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="851"/>
+            <point key="canvasLocation" x="1933" y="802"/>
         </scene>
         <!--Cab Info Page View Controller-->
         <scene sceneID="goM-s1-JBs">
@@ -113,7 +128,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9q-bJ-v8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860.8695652173915" y="91.741071428571431"/>
+            <point key="canvasLocation" x="2771.0144927536235" y="91.741071428571431"/>
         </scene>
         <!--Cab Info View Controller-->
         <scene sceneID="0ni-bw-od9">
@@ -216,25 +231,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-bP-n8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2573.913043478261" y="83.705357142857139"/>
+            <point key="canvasLocation" x="3484.057971014493" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="1rV-qG-iHU">
+        <scene sceneID="g6n-CS-ggW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cqn-ZP-fSJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v4b-79-KaK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MT2-hV-ZTB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VHn-Uc-N7q">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PJQ-xl-L6M"/>
+                        <segue destination="tqU-z2-jQH" kind="relationship" relationship="rootViewController" id="WP2-mM-eqf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bpH-kr-ufa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXe-2r-ZFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.04347826086958" y="83.705357142857139"/>
+            <point key="canvasLocation" x="-101" y="445"/>
         </scene>
     </scenes>
     <resources>
@@ -243,6 +258,9 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

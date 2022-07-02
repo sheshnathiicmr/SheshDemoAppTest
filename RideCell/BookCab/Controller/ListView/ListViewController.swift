@@ -7,8 +7,16 @@
 
 import UIKit
 
-class ListViewController: BaseViewController {
+class ListViewController: UIViewController {
 
+    ///MARK:- StaticMethods
+    class func initWithStoryboard() -> ListViewController {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        let listViewController = storyboard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+        return listViewController
+    }
+    
     // MARK: - ViewLifeCycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
