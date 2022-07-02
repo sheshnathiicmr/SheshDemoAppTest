@@ -12,42 +12,55 @@ protocol CabRepositoryProtocol {
 }
 
 class CabRepository: CabRepositoryProtocol {
-    
+
     func fetchCabs(with completion: @escaping (Result<[Cab], CustomError>) -> Void) {
-        if let path = Bundle.main.path(forResource: "sample", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                var cabs = [Cab]()
-                if let cabsJSON = jsonResult as? [[String:AnyObject]] {
+        ApiRequestManager.shared.getCabsInfo { result in
+            switch result {
+            case .success(let response):
+                print("response: \(response)")
+                if let cabsJSON = response as? [[String:AnyObject]] {
+                    var cabs = [Cab]()
                     for cabJSON in cabsJSON {
-                        let id = cabJSON["id"] as! Int
-                        let isActive = cabJSON["is_active"] as! Bool
-                        let isAvailable = cabJSON["is_available"] as! Bool
-                        let lat = cabJSON["lat"] as? Double
-                        let lng = cabJSON["lng"] as? Double
-                        let licensePlateNumber = cabJSON["license_plate_number"] as! String
-                        let pool = cabJSON["pool"] as! String
-                        let remainingMileage = cabJSON["remaining_mileage"] as! Int
-                        let remainingRangeInMeters = cabJSON["remaining_range_in_meters"] as? Int
-                        let transmissionMode = cabJSON["transmission_mode"] as? String
-                        let vehicleMake = cabJSON["vehicle_make"] as! String
-                        let seatCount = cabJSON["seat_count"] as! String
-                        let vehiclePicAbsoluteUrl = cabJSON["vehicle_pic_absolute_url"] as! String
-                        let vehicleType = cabJSON["vehicle_type"] as! String
-                        let vehicleTypeId = cabJSON["vehicle_type_id"] as! Int
-                        
-                       let cab = Cab(id: id, isActive: isActive, isAvailable: isAvailable, lat: lat, lng: lng, licensePlateNumber: licensePlateNumber, pool: pool, remainingMileage: remainingMileage, remainingRangeInMeters: remainingRangeInMeters, transmissionMode: transmissionMode, vehicleMake: vehicleMake, seatCount: seatCount, vehiclePicAbsoluteUrl: vehiclePicAbsoluteUrl, vehicleType: vehicleType, vehicleTypeId: vehicleTypeId)
-                        cabs.append(cab)
+                        if let cab = self.getCab(with: cabJSON) {
+                            cabs.append(cab)
+                        }
                     }
-                    completion(.success(cabs))
+                    DispatchQueue.main.async {
+                        completion(.success(cabs))
+                    }
                 }else {
-                    completion(.failure(.parsing("error_during_parsing".localized)))
+                    DispatchQueue.main.async {
+                        completion(.failure(CustomError.parsing("error_during_parsing".localized)))
+                    }
                 }
-              } catch {
-                  completion(.failure(.parsing("error_during_parsing".localized)))
-              }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
         }
+    }
+    
+    private func getCab(with cabJSON:[String:AnyObject]) -> Cab? {
+        let id = cabJSON["id"] as! String
+        let modelIdentifier = cabJSON["modelIdentifier"] as! String
+        let modelName = cabJSON["modelName"] as! String
+        let name = cabJSON["name"] as! String
+        let make = cabJSON["make"] as! String
+        let group = cabJSON["group"] as! String
+        let color = cabJSON["color"] as! String
+        let series = cabJSON["series"] as! String
+        let fuelType = cabJSON["fuelType"] as! String
+        let fuelLevel = cabJSON["fuelLevel"] as! Double
+        let transmission = cabJSON["transmission"] as! String
+        let licensePlate = cabJSON["licensePlate"] as! String
+        let latitude = cabJSON["latitude"] as? Double
+        let longitude = cabJSON["longitude"] as? Double
+        let innerCleanliness = cabJSON["innerCleanliness"] as! String
+        let carImageUrl = cabJSON["carImageUrl"] as! String
+        
+        let cab = Cab(id: id, modelIdentifier: modelIdentifier, modelName: modelName, name: name, make: make, group: group, color: color, series: series, fuelType: fuelType, fuelLevel: fuelLevel, transmission: transmission, licensePlate: licensePlate, latitude: latitude, longitude: longitude, innerCleanliness: innerCleanliness, carImageUrl: carImageUrl)
+        return cab
     }
     
 }

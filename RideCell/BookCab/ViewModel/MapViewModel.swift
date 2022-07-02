@@ -86,19 +86,19 @@ class MapViewModel {
     }
     
     func getRegion(for cab:Cab) -> MKCoordinateRegion? {
-        guard let lat = cab.lat, let lng = cab.lng else { return nil}
+        guard let lat = cab.latitude, let lng = cab.longitude else { return nil}
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03))
         return region
     }
     
     func getAnnotation(for cab:Cab) -> CabPointAnnotation? {
-        guard let lat = cab.lat, let lng = cab.lng else { return nil }
+        guard let lat = cab.latitude, let lng = cab.longitude else { return nil }
         let location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
         let cabAnnotation = CabPointAnnotation(cab: cab)
         cabAnnotation.coordinate = location
-        cabAnnotation.title = cab.licensePlateNumber
-        cabAnnotation.subtitle = cab.vehicleType
+        cabAnnotation.title = cab.licensePlate
+        cabAnnotation.subtitle = cab.make
         return cabAnnotation
     }
 }

@@ -15,39 +15,42 @@ class Cab: Equatable {
     
     
     ///MARK:- Properties
-    var id:Int
-    var isActive:Bool
-    var isAvailable:Bool
-    var lat : Double?
-    var lng : Double?
-    var licensePlateNumber:String
-    var pool:String
-    var remainingMileage:Int
-    var remainingRangeInMeters:Int?
-    var transmissionMode:String?
-    var vehicleMake:String
-    var seatCount:String
-    var vehiclePicAbsoluteUrl:String
-    var vehicleType:String
-    var vehicleTypeId:Int
+    var id:String
+    var modelIdentifier:String
+    var modelName:String
+    var name:String
+    var make:String
+    var group:String
+    var color:String
+    var series:String
+    var fuelType:String
+    var fuelLevel:Double
+    var transmission:String
+    var licensePlate:String
+    var latitude:Double?
+    var longitude:Double?
+    var innerCleanliness:String
+    var carImageUrl:String
     
+
     ///MARK:- Initialiser
-    internal init(id: Int, isActive: Bool, isAvailable: Bool, lat: Double?, lng: Double?, licensePlateNumber: String, pool: String, remainingMileage: Int, remainingRangeInMeters: Int?, transmissionMode: String?, vehicleMake: String, seatCount: String, vehiclePicAbsoluteUrl: String, vehicleType: String, vehicleTypeId: Int) {
+    internal init(id: String, modelIdentifier:String, modelName:String, name:String, make:String, group:String, color:String, series:String, fuelType:String, fuelLevel:Double, transmission:String, licensePlate:String, latitude:Double?, longitude:Double?, innerCleanliness:String, carImageUrl:String) {
         self.id = id
-        self.isActive = isActive
-        self.isAvailable = isAvailable
-        self.lat = lat
-        self.lng = lng
-        self.licensePlateNumber = licensePlateNumber
-        self.pool = pool
-        self.remainingMileage = remainingMileage
-        self.remainingRangeInMeters = remainingRangeInMeters
-        self.transmissionMode = transmissionMode
-        self.vehicleMake = vehicleMake
-        self.seatCount = seatCount
-        self.vehiclePicAbsoluteUrl = vehiclePicAbsoluteUrl
-        self.vehicleType = vehicleType
-        self.vehicleTypeId = vehicleTypeId
+        self.modelIdentifier = modelIdentifier
+        self.modelName = modelName
+        self.name = name
+        self.make = make
+        self.group = group
+        self.color = color
+        self.series = series
+        self.fuelType = fuelType
+        self.fuelLevel = fuelLevel
+        self.transmission = transmission
+        self.licensePlate = licensePlate
+        self.latitude = latitude
+        self.longitude = longitude
+        self.innerCleanliness = innerCleanliness
+        self.carImageUrl = carImageUrl
     }
     
     

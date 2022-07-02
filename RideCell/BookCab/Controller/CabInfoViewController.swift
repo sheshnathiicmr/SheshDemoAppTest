@@ -36,16 +36,16 @@ class CabInfoViewController: UIViewController {
     
     ///MARK:- HelperMethods
     private func bindCabInfo() {
-        self.licensePlateNumberLabel.text = self.cab.licensePlateNumber
-        self.seatsCountLabel.text = self.cab.seatCount
-        self.nonRunningCostLabel.text = self.cab.transmissionMode
-        self.cabTypeLabel.text = cab.vehicleType
+        self.licensePlateNumberLabel.text = self.cab.licensePlate
+        self.seatsCountLabel.text = self.cab.series
+        self.nonRunningCostLabel.text = self.cab.innerCleanliness
+        self.cabTypeLabel.text = cab.make
         self.setBackgroundImage()
     }
     
     private func setBackgroundImage() {
         self.backgroundImageView.image = UIImage() //remove image initially to avoid using wrong position image
-        let url = URL(string: cab.vehiclePicAbsoluteUrl)
+        let url = URL(string: cab.carImageUrl)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {

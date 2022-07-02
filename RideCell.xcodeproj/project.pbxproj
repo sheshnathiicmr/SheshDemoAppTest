@@ -16,13 +16,13 @@
 		81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */; };
 		81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0C28409BF100EA77DE /* CabInfoViewController.swift */; };
 		81991B112840A28800EA77DE /* CabPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B102840A28800EA77DE /* CabPointAnnotation.swift */; };
+		81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C02BA628704DF30084F76A /* ApiRequestManager.swift */; };
 		81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58038283FE4DF000BC152 /* AppDelegate.swift */; };
 		81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803A283FE4DF000BC152 /* SceneDelegate.swift */; };
 		81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803C283FE4DF000BC152 /* MapViewController.swift */; };
 		81E58040283FE4DF000BC152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E5803E283FE4DF000BC152 /* Main.storyboard */; };
 		81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E58041283FE4E0000BC152 /* Assets.xcassets */; };
 		81E58045283FE4E0000BC152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E58043283FE4E0000BC152 /* LaunchScreen.storyboard */; };
-		81E58053283FE68E000BC152 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 81E58052283FE68E000BC152 /* sample.json */; };
 		81E5805B283FE864000BC152 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805A283FE864000BC152 /* MapViewModel.swift */; };
 		81E5805E283FE9BA000BC152 /* Cab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5805D283FE9BA000BC152 /* Cab.swift */; };
 		81E58061283FEE82000BC152 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58060283FEE82000BC152 /* CustomError.swift */; };
@@ -54,6 +54,7 @@
 		81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewController.swift; sourceTree = "<group>"; };
 		81991B0C28409BF100EA77DE /* CabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoViewController.swift; sourceTree = "<group>"; };
 		81991B102840A28800EA77DE /* CabPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPointAnnotation.swift; sourceTree = "<group>"; };
+		81C02BA628704DF30084F76A /* ApiRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestManager.swift; sourceTree = "<group>"; };
 		81E58035283FE4DF000BC152 /* RideCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E58038283FE4DF000BC152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81E5803A283FE4DF000BC152 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		81E58041283FE4E0000BC152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E58044283FE4E0000BC152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E58046283FE4E0000BC152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81E58052283FE68E000BC152 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		81E5805A283FE864000BC152 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		81E5805D283FE9BA000BC152 /* Cab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cab.swift; sourceTree = "<group>"; };
 		81E58060283FEE82000BC152 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 			children = (
 				81E5803E283FE4DF000BC152 /* Main.storyboard */,
 				81E58066283FF8ED000BC152 /* Repository */,
-				81E58051283FE663000BC152 /* Resources */,
 				81E5805F283FEE30000BC152 /* HelperClasses */,
 				81E5805C283FE8B0000BC152 /* Model */,
 				81E5804F283FE55C000BC152 /* Controller */,
@@ -210,14 +209,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		81E58051283FE663000BC152 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				81E58052283FE68E000BC152 /* sample.json */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		81E58059283FE80B000BC152 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				81E58060283FEE82000BC152 /* CustomError.swift */,
+				81C02BA628704DF30084F76A /* ApiRequestManager.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -351,7 +343,6 @@
 			files = (
 				81E5806E28400F2D000BC152 /* Localizable.strings in Resources */,
 				81E58045283FE4E0000BC152 /* LaunchScreen.storyboard in Resources */,
-				81E58053283FE68E000BC152 /* sample.json in Resources */,
 				81E58042283FE4E0000BC152 /* Assets.xcassets in Resources */,
 				81E58040283FE4DF000BC152 /* Main.storyboard in Resources */,
 			);
@@ -377,6 +368,7 @@
 			files = (
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
 				81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */,
+				81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
 				81E5806A28400EB3000BC152 /* String.swift in Sources */,
 				81E5805E283FE9BA000BC152 /* Cab.swift in Sources */,
