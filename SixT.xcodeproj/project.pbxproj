@@ -55,14 +55,14 @@
 		8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		813DCF672871F14500C3CD83 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		8195BFF5284138F80049B1EF /* RideCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8195BFF5284138F80049B1EF /* SixTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195BFF7284138F80049B1EF /* RideCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCellTests.swift; sourceTree = "<group>"; };
 		8195C002284139FD0049B1EF /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewController.swift; sourceTree = "<group>"; };
 		81991B0C28409BF100EA77DE /* CabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoViewController.swift; sourceTree = "<group>"; };
 		81991B102840A28800EA77DE /* CabPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPointAnnotation.swift; sourceTree = "<group>"; };
 		81C02BA628704DF30084F76A /* ApiRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestManager.swift; sourceTree = "<group>"; };
-		81E58035283FE4DF000BC152 /* RideCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81E58035283FE4DF000BC152 /* SixT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E58038283FE4DF000BC152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81E5803A283FE4DF000BC152 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		81E5803C283FE4DF000BC152 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -105,12 +105,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8195BFF6284138F80049B1EF /* RideCellTests */ = {
+		8195BFF6284138F80049B1EF /* SixTTests */ = {
 			isa = PBXGroup;
 			children = (
 				8195C001284139D70049B1EF /* BookCabTest */,
 			);
-			path = RideCellTests;
+			path = SixTTests;
 			sourceTree = "<group>";
 		};
 		8195C001284139D70049B1EF /* BookCabTest */ = {
@@ -135,8 +135,8 @@
 		81E5802C283FE4DF000BC152 = {
 			isa = PBXGroup;
 			children = (
-				81E58037283FE4DF000BC152 /* RideCell */,
-				8195BFF6284138F80049B1EF /* RideCellTests */,
+				81E58037283FE4DF000BC152 /* SixT */,
+				8195BFF6284138F80049B1EF /* SixTTests */,
 				81E58036283FE4DF000BC152 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,13 +144,13 @@
 		81E58036283FE4DF000BC152 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81E58035283FE4DF000BC152 /* RideCell.app */,
-				8195BFF5284138F80049B1EF /* RideCellTests.xctest */,
+				81E58035283FE4DF000BC152 /* SixT.app */,
+				8195BFF5284138F80049B1EF /* SixTTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		81E58037283FE4DF000BC152 /* RideCell */ = {
+		81E58037283FE4DF000BC152 /* SixT */ = {
 			isa = PBXGroup;
 			children = (
 				81E58050283FE564000BC152 /* Common */,
@@ -159,7 +159,7 @@
 				81E58043283FE4E0000BC152 /* LaunchScreen.storyboard */,
 				81E58046283FE4E0000BC152 /* Info.plist */,
 			);
-			path = RideCell;
+			path = SixT;
 			sourceTree = "<group>";
 		};
 		81E5804D283FE549000BC152 /* View */ = {
@@ -332,9 +332,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8195BFF4284138F80049B1EF /* RideCellTests */ = {
+		8195BFF4284138F80049B1EF /* SixTTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8195BFFD284138F80049B1EF /* Build configuration list for PBXNativeTarget "RideCellTests" */;
+			buildConfigurationList = 8195BFFD284138F80049B1EF /* Build configuration list for PBXNativeTarget "SixTTests" */;
 			buildPhases = (
 				8195BFF1284138F80049B1EF /* Sources */,
 				8195BFF2284138F80049B1EF /* Frameworks */,
@@ -345,14 +345,14 @@
 			dependencies = (
 				8195BFFA284138F80049B1EF /* PBXTargetDependency */,
 			);
-			name = RideCellTests;
+			name = SixTTests;
 			productName = RideCellTests;
-			productReference = 8195BFF5284138F80049B1EF /* RideCellTests.xctest */;
+			productReference = 8195BFF5284138F80049B1EF /* SixTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		81E58034283FE4DF000BC152 /* RideCell */ = {
+		81E58034283FE4DF000BC152 /* SixT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81E58049283FE4E0000BC152 /* Build configuration list for PBXNativeTarget "RideCell" */;
+			buildConfigurationList = 81E58049283FE4E0000BC152 /* Build configuration list for PBXNativeTarget "SixT" */;
 			buildPhases = (
 				81E58031283FE4DF000BC152 /* Sources */,
 				81E58032283FE4DF000BC152 /* Frameworks */,
@@ -362,9 +362,9 @@
 			);
 			dependencies = (
 			);
-			name = RideCell;
+			name = SixT;
 			productName = RideCell;
-			productReference = 81E58035283FE4DF000BC152 /* RideCell.app */;
+			productReference = 81E58035283FE4DF000BC152 /* SixT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -386,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 81E58030283FE4DF000BC152 /* Build configuration list for PBXProject "RideCell" */;
+			buildConfigurationList = 81E58030283FE4DF000BC152 /* Build configuration list for PBXProject "SixT" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -399,8 +399,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				81E58034283FE4DF000BC152 /* RideCell */,
-				8195BFF4284138F80049B1EF /* RideCellTests */,
+				81E58034283FE4DF000BC152 /* SixT */,
+				8195BFF4284138F80049B1EF /* SixTTests */,
 			);
 		};
 /* End PBXProject section */
@@ -473,7 +473,7 @@
 /* Begin PBXTargetDependency section */
 		8195BFFA284138F80049B1EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 81E58034283FE4DF000BC152 /* RideCell */;
+			target = 81E58034283FE4DF000BC152 /* SixT */;
 			targetProxy = 8195BFF9284138F80049B1EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -519,7 +519,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RideCell.app/RideCell";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SixT.app/SixT";
 			};
 			name = Debug;
 		};
@@ -536,7 +536,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RideCell.app/RideCell";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SixT.app/SixT";
 			};
 			name = Release;
 		};
@@ -662,7 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RideCell/Info.plist;
+				INFOPLIST_FILE = SixT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -689,7 +689,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RideCell/Info.plist;
+				INFOPLIST_FILE = SixT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -711,7 +711,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8195BFFD284138F80049B1EF /* Build configuration list for PBXNativeTarget "RideCellTests" */ = {
+		8195BFFD284138F80049B1EF /* Build configuration list for PBXNativeTarget "SixTTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8195BFFB284138F80049B1EF /* Debug */,
@@ -720,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81E58030283FE4DF000BC152 /* Build configuration list for PBXProject "RideCell" */ = {
+		81E58030283FE4DF000BC152 /* Build configuration list for PBXProject "SixT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				81E58047283FE4E0000BC152 /* Debug */,
@@ -729,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81E58049283FE4E0000BC152 /* Build configuration list for PBXNativeTarget "RideCell" */ = {
+		81E58049283FE4E0000BC152 /* Build configuration list for PBXNativeTarget "SixT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				81E5804A283FE4E0000BC152 /* Debug */,

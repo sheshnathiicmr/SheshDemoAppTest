@@ -13,7 +13,6 @@ extension UIImageView {
     func displayImage(with urlString:String) {
         if let cabImage = ImageCache.shared.getImage(with: urlString) {
             self.image = cabImage
-            print("image from cache")
         }else {
             let url = URL(string: urlString)
             DispatchQueue.global().async {
@@ -22,7 +21,6 @@ extension UIImageView {
                         ImageCache.shared.setImage(with: urlString, image: cabImage)
                         DispatchQueue.main.async {
                             self.image = cabImage
-                            print("opps no cache")
                         }
                     }
                 }
