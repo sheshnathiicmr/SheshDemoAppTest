@@ -18,7 +18,6 @@ class CabRepository: CabRepositoryProtocol {
             switch result {
             case .success(let response):
                 if let cabs = self.getCab(with: response) {
-                    print("cabs: \(cabs)")
                     DispatchQueue.main.async {
                         completion(.success(cabs))
                     }
