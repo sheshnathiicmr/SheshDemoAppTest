@@ -12,12 +12,11 @@ class ApiRequestManager {
     static let shared = ApiRequestManager()
     private let baseUrl = "https://cdn.sixt.io/codingtask"
 
-    func getCabsInfo(with completion: @escaping (Result<Any, CustomError>) -> Void) {
+    func getCabsInfo(with completion: @escaping (Result<Data, CustomError>) -> Void) {
         let task = URLSession.shared.dataTask(with: NSURL(string: "\(baseUrl)/cars")! as URL, completionHandler: { (data, response, error) -> Void in
             do{
                 if let responseData = data {
-                    let jsonResult = try JSONSerialization.jsonObject(with: responseData, options: .mutableLeaves)
-                    completion(.success(jsonResult))
+                    completion(.success(responseData))
                 }else {
                     completion(.failure(CustomError.serverError))
                 }
