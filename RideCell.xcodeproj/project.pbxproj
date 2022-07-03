@@ -10,6 +10,7 @@
 		8103C4D52841EFE5005B4DD4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D42841EFE5005B4DD4 /* main.swift */; };
 		8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */; };
 		8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */; };
+		813DCF682871F14500C3CD83 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DCF672871F14500C3CD83 /* ImageCache.swift */; };
 		8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195BFF7284138F80049B1EF /* RideCellTests.swift */; };
 		8195C000284139B10049B1EF /* test_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 8195BFFF284139B10049B1EF /* test_sample.json */; };
 		8195C003284139FD0049B1EF /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195C002284139FD0049B1EF /* MockRepository.swift */; };
@@ -54,6 +55,7 @@
 		8103C4D42841EFE5005B4DD4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
+		813DCF672871F14500C3CD83 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		8195BFF5284138F80049B1EF /* RideCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195BFF7284138F80049B1EF /* RideCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCellTests.swift; sourceTree = "<group>"; };
 		8195BFFF284139B10049B1EF /* test_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_sample.json; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				81E58060283FEE82000BC152 /* CustomError.swift */,
 				81C02BA628704DF30084F76A /* ApiRequestManager.swift */,
+				813DCF672871F14500C3CD83 /* ImageCache.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				81E58063283FF5C3000BC152 /* UIViewController.swift in Sources */,
 				8103C4D52841EFE5005B4DD4 /* main.swift in Sources */,
 				81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */,
+				813DCF682871F14500C3CD83 /* ImageCache.swift in Sources */,
 				81FD312B2870C2A300A257F1 /* BaseLayoutViewController.swift in Sources */,
 				81E5806828400647000BC152 /* CabPin.swift in Sources */,
 				81E58065283FF8A7000BC152 /* CabRepository.swift in Sources */,

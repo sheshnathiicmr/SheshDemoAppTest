@@ -10,12 +10,21 @@ import UIKit
 
 extension UIImageView {
 
-    func displayImage(with url:String) {
-        let url = URL(string: url)
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url!) {
-                DispatchQueue.main.async {
-                    self.image = UIImage(data: data)
+    func displayImage(with urlString:String) {
+        if let cabImage = ImageCache.shared.getImage(with: urlString) {
+            self.image = cabImage
+            print("image from cache")
+        }else {
+            let url = URL(string: urlString)
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url!) {
+                    if let cabImage = UIImage(data: data) {
+                        ImageCache.shared.setImage(with: urlString, image: cabImage)
+                        DispatchQueue.main.async {
+                            self.image = cabImage
+                            print("opps no cache")
+                        }
+                    }
                 }
             }
         }
