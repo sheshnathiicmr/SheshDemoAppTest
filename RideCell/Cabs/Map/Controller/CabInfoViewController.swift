@@ -9,17 +9,17 @@ import UIKit
 
 class CabInfoViewController: UIViewController {
 
-    ///MARK:- Outlets
+    //MARK: - Outlets
     @IBOutlet weak var licensePlateNumberLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var seatsCountLabel: UILabel!
     @IBOutlet weak var nonRunningCostLabel: UILabel!
-    @IBOutlet weak var cabTypeLabel: UILabel!
+    @IBOutlet weak var name: UILabel!
     
-    ///MARK:- Proporties
+    //MARK: - Proporties
     var cab:Cab!
     
-    ///MARK:- StaticMethods
+    //MARK: - StaticMethods
     class func initWithStoryboard(cab:Cab) -> CabInfoViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
@@ -28,18 +28,18 @@ class CabInfoViewController: UIViewController {
         return cabInfoViewController
     }
     
-    ///MARK:- ViewLifeCycle
+    //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindCabInfo()
     }
     
-    ///MARK:- HelperMethods
+    //MARK: - HelperMethods
     private func bindCabInfo() {
         self.licensePlateNumberLabel.text = self.cab.licensePlate
         self.seatsCountLabel.text = self.cab.series
         self.nonRunningCostLabel.text = self.cab.innerCleanliness
-        self.cabTypeLabel.text = cab.name
+        self.name.text = cab.name
         self.setBackgroundImage()
     }
     

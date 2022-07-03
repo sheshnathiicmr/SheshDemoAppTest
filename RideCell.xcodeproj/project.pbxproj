@@ -12,7 +12,6 @@
 		8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */; };
 		813DCF682871F14500C3CD83 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DCF672871F14500C3CD83 /* ImageCache.swift */; };
 		8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195BFF7284138F80049B1EF /* RideCellTests.swift */; };
-		8195C000284139B10049B1EF /* test_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 8195BFFF284139B10049B1EF /* test_sample.json */; };
 		8195C003284139FD0049B1EF /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195C002284139FD0049B1EF /* MockRepository.swift */; };
 		81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */; };
 		81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0C28409BF100EA77DE /* CabInfoViewController.swift */; };
@@ -58,7 +57,6 @@
 		813DCF672871F14500C3CD83 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		8195BFF5284138F80049B1EF /* RideCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8195BFF7284138F80049B1EF /* RideCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCellTests.swift; sourceTree = "<group>"; };
-		8195BFFF284139B10049B1EF /* test_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test_sample.json; sourceTree = "<group>"; };
 		8195C002284139FD0049B1EF /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewController.swift; sourceTree = "<group>"; };
 		81991B0C28409BF100EA77DE /* CabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoViewController.swift; sourceTree = "<group>"; };
@@ -111,17 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				8195C001284139D70049B1EF /* BookCabTest */,
-				8195BFFE284139580049B1EF /* Resources */,
 			);
 			path = RideCellTests;
-			sourceTree = "<group>";
-		};
-		8195BFFE284139580049B1EF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8195BFFF284139B10049B1EF /* test_sample.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		8195C001284139D70049B1EF /* BookCabTest */ = {
@@ -421,7 +410,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8195C000284139B10049B1EF /* test_sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

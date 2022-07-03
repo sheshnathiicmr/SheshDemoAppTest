@@ -9,7 +9,7 @@ import UIKit
 
 class CabInfoPageViewController: UIPageViewController {
 
-    ///MARK:- Propterties
+    //MARK: - Propterties
     var currentCab: Cab? {
         guard let vc = viewControllers?.first as? CabInfoViewController else { return nil }
         return cabs.first { cabElement in
@@ -19,14 +19,14 @@ class CabInfoPageViewController: UIPageViewController {
     var cabs:[Cab]!
     weak var cabInfoPageDelegate:CabSelectionChangeDelegate?
     
-    ///MARK:- ViewLifeCycle
+    //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
         delegate = self
     }
     
-    ///MARK:- HelperMethods
+    //MARK: - HelperMethods
     func selectedCabChanged(cab: Cab) {
         if currentCab == cab {
             return
@@ -42,7 +42,7 @@ class CabInfoPageViewController: UIPageViewController {
     
 }
 
-///MARK:- UIPageViewControllerDataSource
+//MARK: - UIPageViewControllerDataSource
 extension CabInfoPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -70,7 +70,7 @@ extension CabInfoPageViewController: UIPageViewControllerDataSource {
     }
 }
 
-///MARK:- UIPageViewControllerDelegate
+//MARK: - UIPageViewControllerDelegate
 extension CabInfoPageViewController: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {

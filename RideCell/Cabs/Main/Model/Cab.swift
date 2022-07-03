@@ -13,7 +13,6 @@ class Cab: Equatable {
         return lhs.id == rhs.id
     }
     
-    
     ///MARK:- Properties
     var id:String
     var modelIdentifier:String
