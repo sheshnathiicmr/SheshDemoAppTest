@@ -1,6 +1,6 @@
 //
 //  DataSourceViewModel.swift
-//  RideCell
+//  SixT
 //
 //  Created by sheshnath  on 26/05/22.
 //

@@ -1,6 +1,6 @@
 //
 //  ListViewModel.swift
-//  RideCell
+//  SixT
 //
 //  Created by ityx  on 02/07/22.
 //

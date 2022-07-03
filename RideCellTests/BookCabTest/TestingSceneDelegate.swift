@@ -1,12 +1,12 @@
 //
 //  TestingSceneDelegate.swift
-//  RideCellTests
+//  SixTTests
 //
 //  Created by Sheshnath  on 28/05/22.
 //
 
 import UIKit
-@testable import RideCell
+@testable import SixT
 
 class TestingSceneDelegate: UIResponder, UIWindowSceneDelegate {
 

@@ -1,14 +1,14 @@
 //
-//  RideCellTests.swift
-//  RideCellTests
+//  SixTTests.swift
+//  SixTTests
 //
 //  Created by sheshnath  on 27/05/22.
 //
 
 import XCTest
-@testable import RideCell
+@testable import SixT
 
-class RideCellTests: XCTestCase {
+class SixTTests: XCTestCase {
 
     var mapViewController:MapViewController!
     var mapViewModel:DataSourceViewModel!

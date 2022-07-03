@@ -1,6 +1,6 @@
 //
 //  ImageCache.swift
-//  RideCell
+//  SixT
 //
 //  Created by ityx  on 03/07/22.
 //

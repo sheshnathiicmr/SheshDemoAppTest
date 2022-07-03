@@ -1,12 +1,12 @@
 //
 //  MockRepository.swift
-//  RideCellTests
+//  SixTTests
 //
 //  Created by sheshnath  on 27/05/22.
 //
 
 import Foundation
-@testable import RideCell
+@testable import SixT
 
 class MockRepository: CabRepositoryProtocol {
     

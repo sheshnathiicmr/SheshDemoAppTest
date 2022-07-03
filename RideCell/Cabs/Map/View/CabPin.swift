@@ -1,6 +1,6 @@
 //
 //  CabPin.swift
-//  RideCell
+//  SixT
 //
 //  Created by sheshnath  on 27/05/22.
 //

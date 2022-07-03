@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  RideCell
+//  SixT
 //
 //  Created by Sheshnath  on 28/05/22.
 //

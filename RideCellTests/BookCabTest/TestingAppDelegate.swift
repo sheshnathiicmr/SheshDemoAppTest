@@ -1,6 +1,6 @@
 //
 //  TestingAppDelegate.swift
-//  RideCellTests
+//  SixTTests
 //
 //  Created by Sheshnath  on 28/05/22.
 //
