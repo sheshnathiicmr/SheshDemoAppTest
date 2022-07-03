@@ -1,6 +1,6 @@
 //
-//  SixTTests.swift
-//  SixTTests
+//  MapViewTests.swift
+//  MapViewTests
 //
 //  Created by sheshnath  on 27/05/22.
 //
@@ -8,21 +8,19 @@
 import XCTest
 @testable import SixT
 
-class SixTTests: XCTestCase {
+class MapViewTests: XCTestCase {
 
     var mapViewController:MapViewController!
-    var mapViewModel:DataSourceViewModel!
+    var mapViewModel:MapViewModel!
     var mockRepository:MockRepository!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
         self.mapViewController = MapViewController.initWithStoryboard()
-        
         self.mockRepository = MockRepository()
-        self.mapViewModel = DataSourceViewModel(repository: self.mockRepository)
+        self.mapViewModel = MapViewModel(dataSourceViewModel: DataSourceViewModel(repository: mockRepository))
         self.mapViewController.viewModel = self.mapViewModel
-        
     }
 
     override func tearDownWithError() throws {
@@ -58,8 +56,8 @@ class SixTTests: XCTestCase {
                     return
                 }
                 let annotation = self.mapViewModel.getAnnotation(for: cab)
-                XCTAssertTrue(annotation?.title == cab.licensePlateNumber, "annotation title is not correct")
-                XCTAssertTrue(annotation?.subtitle == cab.vehicleType, "annotation subtitle is not correct")
+                XCTAssertTrue(annotation?.title == cab.licensePlate, "annotation title is not correct")
+                XCTAssertTrue(annotation?.subtitle == cab.name, "annotation subtitle is not correct")
                 expectation.fulfill()
             case .failure(_):
                 XCTAssertTrue(false, "error in fetching cabs info")

@@ -11,7 +11,7 @@
 		8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */; };
 		8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */; };
 		813DCF682871F14500C3CD83 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DCF672871F14500C3CD83 /* ImageCache.swift */; };
-		8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195BFF7284138F80049B1EF /* RideCellTests.swift */; };
+		8195BFF8284138F80049B1EF /* MapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195BFF7284138F80049B1EF /* MapViewTests.swift */; };
 		8195C003284139FD0049B1EF /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8195C002284139FD0049B1EF /* MockRepository.swift */; };
 		81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */; };
 		81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0C28409BF100EA77DE /* CabInfoViewController.swift */; };
@@ -56,7 +56,7 @@
 		8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		813DCF672871F14500C3CD83 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		8195BFF5284138F80049B1EF /* SixTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8195BFF7284138F80049B1EF /* RideCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideCellTests.swift; sourceTree = "<group>"; };
+		8195BFF7284138F80049B1EF /* MapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTests.swift; sourceTree = "<group>"; };
 		8195C002284139FD0049B1EF /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewController.swift; sourceTree = "<group>"; };
 		81991B0C28409BF100EA77DE /* CabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8195C00428413D100049B1EF /* Helper */,
-				8195BFF7284138F80049B1EF /* RideCellTests.swift */,
+				8195BFF7284138F80049B1EF /* MapViewTests.swift */,
 				8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */,
 				8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */,
 			);
@@ -433,7 +433,7 @@
 			files = (
 				8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */,
 				8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */,
-				8195BFF8284138F80049B1EF /* RideCellTests.swift in Sources */,
+				8195BFF8284138F80049B1EF /* MapViewTests.swift in Sources */,
 				8195C003284139FD0049B1EF /* MockRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
