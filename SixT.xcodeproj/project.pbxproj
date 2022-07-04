@@ -19,7 +19,7 @@
 		81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */; };
 		81991B0D28409BF100EA77DE /* CabInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B0C28409BF100EA77DE /* CabInfoViewController.swift */; };
 		81991B112840A28800EA77DE /* CabPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81991B102840A28800EA77DE /* CabPointAnnotation.swift */; };
-		81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C02BA628704DF30084F76A /* ApiRequestManager.swift */; };
+		81C02BA728704DF30084F76A /* ApiRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C02BA628704DF30084F76A /* ApiRequestHandler.swift */; };
 		81E58039283FE4DF000BC152 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E58038283FE4DF000BC152 /* AppDelegate.swift */; };
 		81E5803B283FE4DF000BC152 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803A283FE4DF000BC152 /* SceneDelegate.swift */; };
 		81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E5803C283FE4DF000BC152 /* MapViewController.swift */; };
@@ -67,7 +67,7 @@
 		81991B0A28409BB700EA77DE /* CabInfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoPageViewController.swift; sourceTree = "<group>"; };
 		81991B0C28409BF100EA77DE /* CabInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoViewController.swift; sourceTree = "<group>"; };
 		81991B102840A28800EA77DE /* CabPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabPointAnnotation.swift; sourceTree = "<group>"; };
-		81C02BA628704DF30084F76A /* ApiRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestManager.swift; sourceTree = "<group>"; };
+		81C02BA628704DF30084F76A /* ApiRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestHandler.swift; sourceTree = "<group>"; };
 		81E58035283FE4DF000BC152 /* SixT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E58038283FE4DF000BC152 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81E5803A283FE4DF000BC152 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +136,14 @@
 				8195C002284139FD0049B1EF /* MockRepository.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		8170BDF128734ACE00E575E0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				81C02BA628704DF30084F76A /* ApiRequestHandler.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		8195BFF6284138F80049B1EF /* SixTTests */ = {
@@ -257,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				81E58060283FEE82000BC152 /* CustomError.swift */,
-				81C02BA628704DF30084F76A /* ApiRequestManager.swift */,
 				813DCF672871F14500C3CD83 /* ImageCache.swift */,
 			);
 			path = HelperClasses;
@@ -322,6 +329,7 @@
 			children = (
 				81FD31272870B8AB00A257F1 /* Controller */,
 				81FD31262870B89F00A257F1 /* ViewModel */,
+				8170BDF128734ACE00E575E0 /* API */,
 				81E58066283FF8ED000BC152 /* Repository */,
 				81E5805C283FE8B0000BC152 /* Model */,
 				81E5803E283FE4DF000BC152 /* Main.storyboard */,
@@ -482,7 +490,7 @@
 				81E58061283FEE82000BC152 /* CustomError.swift in Sources */,
 				81FD31312870C5F600A257F1 /* ListViewModel.swift in Sources */,
 				81991B0B28409BB700EA77DE /* CabInfoPageViewController.swift in Sources */,
-				81C02BA728704DF30084F76A /* ApiRequestManager.swift in Sources */,
+				81C02BA728704DF30084F76A /* ApiRequestHandler.swift in Sources */,
 				81E5803D283FE4DF000BC152 /* MapViewController.swift in Sources */,
 				81FD31332870CEDA00A257F1 /* UIImageView.swift in Sources */,
 				81E5806A28400EB3000BC152 /* String.swift in Sources */,

@@ -60,7 +60,7 @@ class DataSourceViewModel {
     //MARK: - Methods
     func fetchCabsData() {
         self.delegate?.stateChanged(newState: self.state) //set initial state
-        self.repository.fetchCabs { result in
+        self.repository.fetchCabs(apiRequest: ApiRequestHandler()) { result in
             switch result {
             case let .success(cabs):
                 self.selectedCab = cabs.first
