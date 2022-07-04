@@ -14,14 +14,10 @@ class ApiRequestManager {
 
     func getCabsInfo(with completion: @escaping (Result<Data, CustomError>) -> Void) {
         let task = URLSession.shared.dataTask(with: NSURL(string: "\(baseUrl)/cars")! as URL, completionHandler: { (data, response, error) -> Void in
-            do{
-                if let responseData = data {
-                    completion(.success(responseData))
-                }else {
-                    completion(.failure(CustomError.serverError))
-                }
-            } catch {
-                completion(.failure(CustomError.unknown))
+            if let responseData = data {
+                completion(.success(responseData))
+            }else {
+                completion(.failure(CustomError.serverError))
             }
         })
         task.resume()
