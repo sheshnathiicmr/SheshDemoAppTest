@@ -29,11 +29,4 @@ class CacheTest: XCTestCase {
         XCTAssertTrue(self.cache.getImage(with: urlString) != nil, "setting cache image against key(url) not working")
     }
     
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
