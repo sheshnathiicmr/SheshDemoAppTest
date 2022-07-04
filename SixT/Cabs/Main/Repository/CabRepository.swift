@@ -8,13 +8,19 @@
 import Foundation
 
 protocol CabRepositoryProtocol {
-    func fetchCabs(apiRequest: ApiRequestProtocol, completion: @escaping (Result<[Cab], CustomError>) -> Void)
+    func fetchCabs(completion: @escaping (Result<[Cab], CustomError>) -> Void)
 }
 
 class CabRepository: CabRepositoryProtocol {
 
-    func fetchCabs(apiRequest: ApiRequestProtocol, completion: @escaping (Result<[Cab], CustomError>) -> Void) {
-        apiRequest.getCabsInfo { result in
+    var apiHandler:ApiRequestProtocol!
+    
+    init(apiHandler:ApiRequestProtocol) {
+        self.apiHandler = apiHandler
+    }
+    
+    func fetchCabs(completion: @escaping (Result<[Cab], CustomError>) -> Void) {
+        self.apiHandler.getCabsInfo { result in
             switch result {
             case .success(let response):
                 let result = self.decodeJSON(with: response)

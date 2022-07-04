@@ -1,5 +1,5 @@
 //
-//  MapViewTests.swift
+//  DataSourceViewModelTests.swift
 //  MapViewTests
 //
 //  Created by sheshnath  on 27/05/22.
@@ -8,22 +8,22 @@
 import XCTest
 @testable import SixT
 
-class RepositoryTests: XCTestCase {
+class DataSourceViewModelTests: XCTestCase {
 
 
-    var mockRepository:MockRepository!
+    var viewModel:DataSourceViewModel!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
-        self.mockRepository = MockRepository()
+        self.viewModel = DataSourceViewModel(repository: CabRepository(apiHandler: MockAPI()))
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testRepositoryFetch() throws {
+    func testFetch() throws {
         let expectation = XCTestExpectation(description: "expect getting annotation count")
         self.mockRepository.fetchCabs { result in
             switch result {

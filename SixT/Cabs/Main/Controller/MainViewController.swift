@@ -22,11 +22,11 @@ enum LayoutType {
         }
     }
     
-    var layoutButtonIcon:String {
+    var layoutButtonIcon:String { ////next step(layout) icon
         get {
             switch self {
             case .map:
-                return "ListView" //next step(layout) icon
+                return "ListView"
             case .list:
                 return "MapView"
             }
@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
     //MARK: - ViewLifeCycle methos
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository())
+        self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository(apiHandler: ApiRequestHandler()))
         self.dataSourceViewModel.delegate = self
         self.dataSourceViewModel.fetchCabsData()
         self.addLayoutChangeNavigationButton()
