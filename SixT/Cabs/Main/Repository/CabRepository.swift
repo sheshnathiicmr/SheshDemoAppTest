@@ -17,12 +17,9 @@ class CabRepository: CabRepositoryProtocol {
         ApiRequestManager.shared.getCabsInfo { result in
             switch result {
             case .success(let response):
-                if let cabs = self.getCab(with: response) {
-                    DispatchQueue.main.async {
-                        completion(.success(cabs))
-                    }
-                }else {
-                    completion(.failure(CustomError.parsing("error_during_parsing".localized)))
+                let result = self.decodeJSON(with: response)
+                DispatchQueue.main.async {
+                    completion(result)
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -32,9 +29,14 @@ class CabRepository: CabRepositoryProtocol {
         }
     }
     
-    private func getCab(with cabsJSONData:Data) -> [Cab]? {
-        let cabs = try! JSONDecoder().decode([Cab].self, from: cabsJSONData)
-        return cabs
+    private func decodeJSON(with cabsJSONData:Data) -> Result<[Cab], CustomError> {
+        let decoder = JSONDecoder()
+        do {
+            let cabs = try decoder.decode([Cab].self, from: cabsJSONData)
+            return .success(cabs)
+        } catch {
+            return .failure(CustomError.parsing(error.localizedDescription))
+        }
     }
     
 }
