@@ -41,14 +41,9 @@ enum DataSourceState {
     
 }
 
-protocol DataSourceModelDelegate: AnyObject {
-    func stateChanged(newState:DataSourceState)
-}
-
 class DataSourceViewModel {
 
     //MARK: - Proporties
-    weak var delegate:DataSourceModelDelegate?
     var state:DataSourceState = .loading
     private var repository:CabRepositoryProtocol!
     private var selectedCab:Cab!
@@ -58,8 +53,7 @@ class DataSourceViewModel {
     }
     
     //MARK: - Methods
-    func fetchCabsData() {
-        self.delegate?.stateChanged(newState: self.state) //set initial state
+    func fetchCabsData(with completion: @escaping (DataSourceState) -> Void) {
         self.repository.fetchCabs { result in
             switch result {
             case let .success(cabs):
@@ -68,7 +62,7 @@ class DataSourceViewModel {
             case .failure(let error) :
                 self.state = .failed(error)
             }
-            self.delegate?.stateChanged(newState: self.state)
+            completion(self.state)
         }
     }
     

@@ -25,14 +25,13 @@ class DataSourceViewModelTests: XCTestCase {
 
     func testFetch() throws {
         let expectation = XCTestExpectation(description: "expect getting annotation count")
-        self.mockRepository.fetchCabs { result in
-            switch result {
-            case .success(let cabs):
+        self.viewModel.fetchCabsData { newState in
+            switch newState {
+            case .loaded(let cabs):
                 XCTAssertTrue(cabs.count == 2, "fetched object count not matched")
                 expectation.fulfill()
-            case .failure(_):
-                XCTAssertTrue(false, "error in fetching cabs info")
-                expectation.fulfill()
+            default:
+                break
             }
         }
         wait(for: [expectation], timeout: 2.0)

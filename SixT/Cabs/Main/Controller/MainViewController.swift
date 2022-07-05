@@ -51,12 +51,29 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository(apiHandler: ApiRequestHandler()))
-        self.dataSourceViewModel.delegate = self
-        self.dataSourceViewModel.fetchCabsData()
+        self.dataSourceViewModel.fetchCabsData {[weak self] newDataSourceState in
+            self?.handleDataSource(newState: newDataSourceState)
+        }
         self.addLayoutChangeNavigationButton()
     }
     
     //MARK: -  helper methos
+    private func handleDataSource(newState: DataSourceState) {
+        self.overlayView.isHidden = newState.shouldHideOverlayView
+        self.overlayMessageLabel.text = newState.overlayViewMessage
+        switch newState {
+        case .loading:
+            break
+        case .loaded(let cabs):
+            self.displayNextLayout()
+            if let baseLayout = self.children.first as? BaseLayoutViewController {
+                baseLayout.dataAvailable(cabs: cabs)
+            }
+        case .failed(let customError):
+            self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
+        }
+    }
+    
     private func showMapView() {
         if let mapLayoutVC = self.mapViewController {
             self.add(mapLayoutVC)
@@ -108,23 +125,4 @@ class MainViewController: UIViewController {
     
 }
 
-//MARK: - ViewModelDelegate
-extension MainViewController: DataSourceModelDelegate {
-    
-    func stateChanged(newState: DataSourceState) {
-        self.overlayView.isHidden = newState.shouldHideOverlayView
-        self.overlayMessageLabel.text = newState.overlayViewMessage
-        switch newState {
-        case .loading:
-            break
-        case .loaded(let cabs):
-            self.displayNextLayout()
-            if let baseLayout = self.children.first as? BaseLayoutViewController {
-                baseLayout.dataAvailable(cabs: cabs)
-            }
-        case .failed(let customError):
-            self.presentAlert(withTitle: "Error", message: customError.getErrorMessage())
-        }
-    }
-}
 
