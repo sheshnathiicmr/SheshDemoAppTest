@@ -12,19 +12,16 @@ class ListViewTests: XCTestCase {
 
     var sut:ListViewController!
     var dataSourceViewModel:DataSourceViewModel!
-    
-    override func setUpWithError() throws {
-        self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository(apiHandler: MockAPI(expectation: .success)))
+        
+    func makeSut(expecation:ExpectationType) {
+        self.dataSourceViewModel = DataSourceViewModel(repository: CabRepository(apiHandler: MockAPI(expectation: expecation)))
         let listViewModel = ListViewModel(dataSourceViewModel: self.dataSourceViewModel)
         self.sut = ListViewController.initWithStoryboard(viewModel: listViewModel)
         self.sut.loadViewIfNeeded()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    
     func testCellsCount() throws {
+        makeSut(expecation: .success)
         let expectation = XCTestExpectation(description: "expect getting annotation count")
         self.dataSourceViewModel.fetchCabsData { [weak self] newState in
             switch newState {
@@ -40,6 +37,7 @@ class ListViewTests: XCTestCase {
     }
 
     func testCellShownRightLabel() throws {
+        makeSut(expecation: .success)
         let expectation = XCTestExpectation(description: "expect getting annotation count")
         self.dataSourceViewModel.fetchCabsData { [weak self] newState in
             switch newState {
@@ -58,11 +56,19 @@ class ListViewTests: XCTestCase {
         wait(for: [expectation], timeout: 2.0)
     }
     
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testCellsCountApiFailed() throws {
+        makeSut(expecation: .serverError)
+        let expectation = XCTestExpectation(description: "expect getting annotation count")
+        self.dataSourceViewModel.fetchCabsData { [weak self] newState in
+            switch newState {
+            case .failed(_):
+                XCTAssertTrue(self?.sut.cabsTableView.visibleCells.count == 0, "visible cell either didn't match or datasource having more records than can fit on visisble screens")
+                expectation.fulfill()
+            default:
+                break
+            }
         }
+        wait(for: [expectation], timeout: 2.0)
     }
 
 }

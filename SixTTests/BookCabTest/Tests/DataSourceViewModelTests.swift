@@ -10,16 +10,6 @@ import XCTest
 
 class DataSourceViewModelTests: XCTestCase {
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        super.setUp()
-        
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testFetchSucccess() throws {
         let viewModel = DataSourceViewModel(repository: CabRepository(apiHandler: MockAPI(expectation: .success)))
         let expectation = XCTestExpectation(description: "expect getting annotation count")
