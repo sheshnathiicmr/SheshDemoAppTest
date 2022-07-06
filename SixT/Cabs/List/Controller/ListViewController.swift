@@ -10,16 +10,17 @@ import UIKit
 class ListViewController: BaseLayoutViewController {
 
     //MARK: - Propterties
-    var viewModel:ListViewModel!
+    private var viewModel:ListViewModel!
     
     //MARK: - Outlets
     @IBOutlet weak var cabsTableView: UITableView!
     
     //MARK: - StaticMethods
-    class func initWithStoryboard() -> ListViewController {
+    class func initWithStoryboard(viewModel:ListViewModel) -> ListViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let listViewController = storyboard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+        listViewController.viewModel = viewModel
         return listViewController
     }
     
