@@ -21,7 +21,7 @@ class ApiRequestHandler: ApiRequestProtocol {
             if let responseData = data {
                 completion(.success(responseData))
             }else {
-                completion(.failure(CustomError.serverError))
+                completion(.failure(CustomError.serverError(errorCode: 500)))
             }
         })
         task.resume()

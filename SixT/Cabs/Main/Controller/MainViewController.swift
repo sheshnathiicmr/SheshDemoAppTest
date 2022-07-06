@@ -109,7 +109,7 @@ class MainViewController: UIViewController {
     
     //MARK: -  Actions
     @objc func displayNextLayout()  {
-        self.children.first?.removeChildViewcontroller() //remove previously add childviewcontroller, if any
+        self.children.first?.removeChildViewcontroller() //remove previously added childviewcontroller, if any
         self.layoutType = self.layoutType.nextLayout
         switch self.layoutType {
         case .list:

@@ -9,8 +9,17 @@ import Foundation
 
 public enum CustomError: Swift.Error {
     case parsing(String)
-    case serverError
+    case serverError(errorCode:Int)
     case unknown
+    
+    func getErrorCode() -> Int? {
+        switch self {
+        case .serverError(let errorCode):
+            return errorCode
+        default:
+            return nil
+        }
+    }
     
     func getErrorMessage() -> String {
         switch self {
