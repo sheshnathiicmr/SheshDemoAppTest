@@ -78,10 +78,9 @@ class MainViewController: UIViewController {
         if let mapLayoutVC = self.mapViewController {
             self.add(mapLayoutVC)
         }else {
-            let mapVC = MapViewController.initWithStoryboard()
-            self.mapViewController = mapVC
             let viewModel = MapViewModel(dataSourceViewModel: self.dataSourceViewModel)
-            mapVC.viewModel = viewModel
+            let mapVC = MapViewController.initWithStoryboard(viewModel: viewModel)
+            self.mapViewController = mapVC
             self.add(mapVC)
         }
     }

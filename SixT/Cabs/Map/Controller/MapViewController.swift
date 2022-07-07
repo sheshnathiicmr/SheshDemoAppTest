@@ -15,14 +15,15 @@ class MapViewController: BaseLayoutViewController {
     @IBOutlet weak var reserveCarButton: UIButton!
     
     //MARK: - Propterties
-    var viewModel:MapViewModel!
+    private var viewModel:MapViewModel!
     var cabInfoPageViewController:CabInfoPageViewController!
     
     //MARK: - StaticMethods
-    class func initWithStoryboard() -> MapViewController {
+    class func initWithStoryboard(viewModel:MapViewModel) -> MapViewController {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         let mapViewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        mapViewController.viewModel = viewModel
         return mapViewController
     }
     
