@@ -31,26 +31,4 @@ class Cab: Equatable, Codable {
     var innerCleanliness:String
     var carImageUrl:String
     
-
-    ///MARK:- Initialiser
-    internal init(id: String, modelIdentifier:String, modelName:String, name:String, make:String, group:String, color:String, series:String, fuelType:String, fuelLevel:Double, transmission:String, licensePlate:String, latitude:Double?, longitude:Double?, innerCleanliness:String, carImageUrl:String) {
-        self.id = id
-        self.modelIdentifier = modelIdentifier
-        self.modelName = modelName
-        self.name = name
-        self.make = make
-        self.group = group
-        self.color = color
-        self.series = series
-        self.fuelType = fuelType
-        self.fuelLevel = fuelLevel
-        self.transmission = transmission
-        self.licensePlate = licensePlate
-        self.latitude = latitude
-        self.longitude = longitude
-        self.innerCleanliness = innerCleanliness
-        self.carImageUrl = carImageUrl
-    }
-    
-    
 }
