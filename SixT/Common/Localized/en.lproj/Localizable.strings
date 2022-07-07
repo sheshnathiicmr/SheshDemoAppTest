@@ -7,3 +7,5 @@
 */
 "please_wait" = "Please wait...";
 "error_during_parsing" = "Opps!!! something went wrong during data processing";
+"info" = "Info";
+"reserve_button_not_functional" = "Will make this work, once hired ;)";

@@ -232,6 +232,7 @@
 		81E5804F283FE55C000BC152 /* Cabs */ = {
 			isa = PBXGroup;
 			children = (
+				81E5803E283FE4DF000BC152 /* Main.storyboard */,
 				81FD31252870B87F00A257F1 /* Main */,
 				81FD311E2870A52A00A257F1 /* List */,
 				81FD311D2870A51300A257F1 /* Map */,
@@ -341,7 +342,6 @@
 				8170BDF128734ACE00E575E0 /* API */,
 				81E58066283FF8ED000BC152 /* Repository */,
 				81E5805C283FE8B0000BC152 /* Model */,
-				81E5803E283FE4DF000BC152 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";

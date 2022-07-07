@@ -42,6 +42,11 @@ class MapViewController: BaseLayoutViewController {
         }
     }
     
+    //MARK: - Actions
+    @IBAction func reserveCarButtonTapped(_ sender: Any) {
+        self.presentAlert(withTitle: "info".localized, message: "reserve_button_not_functional".localized)
+    }
+    
     //MARK: - HelperMethods
     override func dataAvailable(cabs:[Cab]) {
         if let cab = self.viewModel.getSelectedCab() {
