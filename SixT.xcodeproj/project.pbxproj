@@ -10,6 +10,7 @@
 		8103C4D52841EFE5005B4DD4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D42841EFE5005B4DD4 /* main.swift */; };
 		8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */; };
 		8103C4D92841F211005B4DD4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */; };
+		812A559B28775C350039242C /* CabInfoBottomSheetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812A559A28775C350039242C /* CabInfoBottomSheetTest.swift */; };
 		813366D32875E92700C0F982 /* ListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813366D22875E92700C0F982 /* ListViewTests.swift */; };
 		813366D52875FFF700C0F982 /* MapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813366D42875FFF700C0F982 /* MapViewTests.swift */; };
 		813DCF682871F14500C3CD83 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DCF672871F14500C3CD83 /* ImageCache.swift */; };
@@ -59,6 +60,7 @@
 		8103C4D42841EFE5005B4DD4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8103C4D62841F15D005B4DD4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		8103C4D82841F211005B4DD4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
+		812A559A28775C350039242C /* CabInfoBottomSheetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabInfoBottomSheetTest.swift; sourceTree = "<group>"; };
 		813366D22875E92700C0F982 /* ListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewTests.swift; sourceTree = "<group>"; };
 		813366D42875FFF700C0F982 /* MapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTests.swift; sourceTree = "<group>"; };
 		813DCF672871F14500C3CD83 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				8170BDEA2873428F00E575E0 /* CacheTest.swift */,
 				813366D22875E92700C0F982 /* ListViewTests.swift */,
 				813366D42875FFF700C0F982 /* MapViewTests.swift */,
+				812A559A28775C350039242C /* CabInfoBottomSheetTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				8103C4D72841F15D005B4DD4 /* TestingAppDelegate.swift in Sources */,
 				8170BDF328734FB000E575E0 /* MockAPI.swift in Sources */,
 				8195BFF8284138F80049B1EF /* DataSourceViewModelTests.swift in Sources */,
+				812A559B28775C350039242C /* CabInfoBottomSheetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

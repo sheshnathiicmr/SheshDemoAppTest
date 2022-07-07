@@ -2,7 +2,7 @@
 //  MapViewTests.swift
 //  SixTTests
 //
-//  Created by ityx  on 06/07/22.
+//  Created by sheshnath  on 06/07/22.
 //
 
 import XCTest
@@ -44,7 +44,7 @@ class MapViewTests: XCTestCase {
             case .loaded(let cabs):
                 self?.sut.dataAvailable(cabs: cabs)
                 let firstAnnotation = self?.sut.mapView.annotations.first as! CabPointAnnotation
-                let firstCab = cabs.first!
+                let firstCab = firstAnnotation.cab
                 XCTAssertTrue(firstAnnotation.title == firstCab.licensePlate, "Annotation title is not showing right field value")
                 XCTAssertTrue(firstAnnotation.subtitle == firstCab.name, "Annotation subtitle not showing right field value")
                 expectation.fulfill()
