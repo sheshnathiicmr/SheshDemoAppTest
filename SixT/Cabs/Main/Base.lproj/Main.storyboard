@@ -239,28 +239,28 @@
                                 <rect key="frame" x="16" y="8" width="382" height="34"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tkk-IW-Lb6">
-                                        <rect key="frame" x="0.0" y="0.5" width="27" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="26.5" height="33"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 C / Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-JM-zq3">
-                                        <rect key="frame" x="29" y="0.0" width="105" height="34"/>
+                                        <rect key="frame" x="28.5" y="0.0" width="102" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1BM-ur-2tz">
-                                        <rect key="frame" x="136" y="0.5" width="27" height="33"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fuelpump.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1BM-ur-2tz">
+                                        <rect key="frame" x="132.5" y="-1" width="28.5" height="35.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-PY-Pug">
-                                        <rect key="frame" x="165" y="0.0" width="77.5" height="34"/>
+                                        <rect key="frame" x="163" y="0.0" width="75.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkingsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EES-wK-uv2">
-                                        <rect key="frame" x="244.5" y="0.5" width="27" height="33"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape.2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EES-wK-uv2">
+                                        <rect key="frame" x="240.5" y="-0.5" width="34" height="34.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60 C / Min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-gS-Ol1">
-                                        <rect key="frame" x="273.5" y="0.0" width="108.5" height="34"/>
+                                        <rect key="frame" x="276.5" y="0.0" width="105.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -306,10 +306,10 @@
                     <size key="freeformSize" width="414" height="250"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="dbV-r3-ccw" id="f1L-rA-agf"/>
+                        <outlet property="fuelLevelLabel" destination="2pJ-PY-Pug" id="cOx-FC-AvN"/>
                         <outlet property="licensePlateNumberLabel" destination="gm8-JM-zq3" id="yVV-E4-btZ"/>
+                        <outlet property="makeLabel" destination="4lU-gS-Ol1" id="rRf-Pg-vQb"/>
                         <outlet property="name" destination="5Yn-gy-0ms" id="z5H-Rb-DXV"/>
-                        <outlet property="nonRunningCostLabel" destination="4lU-gS-Ol1" id="rRf-Pg-vQb"/>
-                        <outlet property="seatsCountLabel" destination="2pJ-PY-Pug" id="cOx-FC-AvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj5-bP-n8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,8 +339,8 @@
     </scenes>
     <resources>
         <image name="car.circle" catalog="system" width="128" height="121"/>
-        <image name="parkingsign.circle" catalog="system" width="128" height="121"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="fuelpump.fill" catalog="system" width="128" height="128"/>
+        <image name="gearshape.2" catalog="system" width="128" height="100"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

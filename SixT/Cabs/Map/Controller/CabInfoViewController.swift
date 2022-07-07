@@ -12,8 +12,8 @@ class CabInfoViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var licensePlateNumberLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var seatsCountLabel: UILabel!
-    @IBOutlet weak var nonRunningCostLabel: UILabel!
+    @IBOutlet weak var fuelLevelLabel: UILabel!
+    @IBOutlet weak var makeLabel: UILabel!
     @IBOutlet weak var name: UILabel!
     
     //MARK: - Proporties
@@ -37,8 +37,8 @@ class CabInfoViewController: UIViewController {
     //MARK: - HelperMethods
     private func bindCabInfo() {
         self.licensePlateNumberLabel.text = self.cab.licensePlate
-        self.seatsCountLabel.text = self.cab.series
-        self.nonRunningCostLabel.text = self.cab.innerCleanliness
+        self.fuelLevelLabel.text = "\(self.cab.fuelLevel)"
+        self.makeLabel.text = self.cab.make
         self.name.text = cab.name
         self.setBackgroundImage()
     }
